@@ -22,14 +22,14 @@ public:
         {
             if (count < quantity)
             {
-                int numR = nums[right++];
+                int &numR = nums[right++];
                 count += haves[numR]++ == 0;
                 counts[numR]--;
             }
             else
             {
                 answer += size - right + 1;
-                int numL = nums[left++];
+                int &numL = nums[left++];
                 count -= --haves[numL] == 0;
                 if (counts[numL] == 0 && haves[numL] == 0)
                     break;
