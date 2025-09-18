@@ -7,6 +7,8 @@ using namespace std;
 class Solution
 {
 private:
+    unordered_set<char> vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'};
+
     string tolower_string(string s)
     {
         for (auto &&c : s)
@@ -22,21 +24,20 @@ private:
     }
 
 public:
-    vector<string>
-    spellchecker(vector<string> &wordlist, vector<string> &queries)
+    vector<string> spellchecker(vector<string> &wordlist, vector<string> &queries)
     {
         int size_w = wordlist.size(), size_q = queries.size();
 
-        // 我的方法（WA）
+        // 我的方法（超时）
         // vector<string> answer(size_q, "");
-        // unordered_set<char> vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'};
+
         // for (int i = 0; i < size_q; i++)
         // {
         //     string query = queries[i];
         //     int length = query.length();
 
         //     // 遍历 wordlist 来寻找匹配的 word
-        //     bool change = false;
+        //     string case_str = "", vowel_str = "";
         //     for (auto &&word : wordlist)
         //     {
         //         if (word.length() != length)
@@ -48,14 +49,16 @@ public:
         //         }
 
         //         // 匹配字符
-        //         bool match = true;
+        //         bool match = true, case_change = false, vowel_change = false;
         //         for (int j = 0; j < length; j++)
         //         {
         //             char char_query = query[j], char_word = word[j];
         //             if (char_query != char_word)
         //             {
-        //                 if ((tolower(char_query) == tolower(char_word)) || (vowels.find(char_query) != vowels.end() && vowels.find(char_word) != vowels.end()))
-        //                     change = true;
+        //                 if (tolower(char_query) == tolower(char_word))
+        //                     case_change = true;
+        //                 else if (vowels.find(char_query) != vowels.end() && vowels.find(char_word) != vowels.end())
+        //                     vowel_change = true;
         //                 else
         //                 {
         //                     match = false;
@@ -63,8 +66,22 @@ public:
         //                 }
         //             }
         //         }
-        //         if (answer[i] == "" && change && match)
-        //             answer[i] = word;
+
+        //         if (match)
+        //         {
+        //             if (case_str == "" && case_change && !vowel_change)
+        //                 case_str = word;
+        //             else if (vowel_str == "")
+        //                 vowel_str = word;
+        //         }
+        //     }
+
+        //     if (answer[i] == "")
+        //     {
+        //         if (case_str != "")
+        //             answer[i] = case_str;
+        //         else if (vowel_str != "")
+        //             answer[i] = vowel_str;
         //     }
         // }
         // return answer;
@@ -105,17 +122,12 @@ public:
 int main(int argc, char const *argv[])
 {
     Solution solution;
-    vector<string> wordlist = {"KiTe", "kite", "hare", "Hare"};
-    vector<string> queries = {"kite", "Kite", "KiTe", "Hare", "HARE", "Hear", "hear", "keti", "keet", "keto"};
+    vector<string> wordlist = {"KiTe", "kite", "hare", "Hare", "zuo", "zeo"};
+    // vector<string> queries = {"kite", "Kite", "KiTe", "Hare", "HARE", "Hear", "hear", "keti", "keet", "keto"};
+    vector<string> queries = {"keti", "keet", "keto"};
     // vector<string> queries = {"Zeo"};
 
     vector<string> answer = solution.spellchecker(wordlist, queries);
-    // for (auto &&word : wordlist)
-    //     cout << "\"" << word << "\"" << " ";
-    // cout << endl;
-    // for (auto &&query : queries)
-    //     cout << "\"" << query << "\"" << " ";
-    // cout << endl;
     for (auto &&ans : answer)
         cout << "\"" << ans << "\"" << " ";
     cout << endl;
