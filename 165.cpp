@@ -8,10 +8,11 @@ public:
     {
         int size1 = version1.size(), size2 = version2.size();
 
-        string record1 = "0", record2 = "0";
         int position1 = 0, position2 = 0;
         while (position1 < size1 || position2 < size2)
         {
+            string record1 = "0", record2 = "0";
+
             // version 1
             if (position1 < size1)
             {
@@ -19,12 +20,10 @@ public:
                 {
                     char current = version1[position1];
                     if (current == '.')
-                    {
-                        position1++;
                         break;
-                    }
                     record1.push_back(current);
                 }
+                position1++;
             }
 
             // version 2
@@ -34,12 +33,10 @@ public:
                 {
                     char current = version2[position2];
                     if (current == '.')
-                    {
-                        position2++;
                         break;
-                    }
                     record2.push_back(current);
                 }
+                position2++;
             }
 
             int temp1 = stoi(record1), temp2 = stoi(record2);
@@ -47,9 +44,6 @@ public:
                 return 1;
             else if (temp1 < temp2)
                 return -1;
-
-            record1 = "0";
-            record2 = "0";
         }
 
         return 0;
