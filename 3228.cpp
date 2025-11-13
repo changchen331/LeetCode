@@ -40,7 +40,6 @@ public:
                     meet0 = false;
                     count++;
                 }
-
                 answer += count;
             }
         }
