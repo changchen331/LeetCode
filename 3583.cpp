@@ -66,7 +66,7 @@ public:
 
             pair<int, int> response = find_boundaries(memory, i);
             int min_max = response.first, max_min = response.second;
-            if (min_max < 0 || max_min < 0 || max_min >= length)
+            if (min_max < 0 || max_min < 0)
                 continue;
 
             answer += 1LL * (min_max + 1) * (length - max_min);
