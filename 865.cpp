@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-/* *
+/**
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -20,8 +20,8 @@ struct TreeNode
     int val;
     TreeNode *left;
     TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode() : val(0), left(nullptr), right(nullptr) {};
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {};
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
@@ -33,21 +33,25 @@ private:
         if (node == nullptr)
             return {0, nullptr};
 
-        auto [left_height, left_lca] = dfs(node->left);
-        auto [right_height, right_lca] = dfs(node->right);
+        auto [left_height, left] = dfs(node->left);
+        auto [right_height, right] = dfs(node->right);
+
         if (left_height > right_height)
-            return {left_height + 1, left_lca}; // 左子树更高
-
-        if (left_height < right_height)
-            return {right_height + 1, right_lca}; // 右子树更高
-
-        return {left_height + 1, node}; // 一样高
+            return {left_height + 1, left};
+        else if (left_height < right_height)
+            return {right_height + 1, right};
+        else
+            return {left_height + 1, node};
     }
 
 public:
-    TreeNode *lcaDeepestLeaves(TreeNode *root)
+    TreeNode *subtreeWithAllDeepest(TreeNode *root)
     {
-        return dfs(root).second;
+        TreeNode *answer;
+
+        answer = dfs(root).second;
+
+        return answer;
     }
 };
 
@@ -76,7 +80,7 @@ int main(int argc, char const *argv[])
         }
     }
 
-    TreeNode *answer = solution.lcaDeepestLeaves(root);
+    TreeNode *answer = solution.subtreeWithAllDeepest(root);
     queue<TreeNode *> subnodes;
     subnodes.push(answer);
 
