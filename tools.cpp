@@ -36,6 +36,10 @@ struct TreeNode
 
 int main(int argc, char const *argv[])
 {
+    // 二进制字符串转 int
+    string s = "11111";
+    cout << stoi(s, nullptr, 2) << endl;
+
     // 自定义排序规则
     vector<pair<int, int>> pairs = {{1, 2}, {2, 3}, {3, 2}, {4, 2}, {5, 2}};
     sort(pairs.begin(), pairs.end(), Comparator());
