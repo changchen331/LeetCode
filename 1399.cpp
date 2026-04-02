@@ -22,7 +22,9 @@ int init = []()
         for (int j = 0; j < 10; j++, sum++)
         {
             if (i + j == 0)
+            {
                 continue;
+            }
 
             COUNTS[sum] += 1;
             if (COUNTS[sum] > maximum)
@@ -31,9 +33,13 @@ int init = []()
                 ANSWERS[i + j] = count = 1;
             }
             else if (COUNTS[sum] == maximum)
+            {
                 ANSWERS[i + j] = ++count;
+            }
             else
+            {
                 ANSWERS[i + j] = count;
+            }
         }
     }
     ANSWERS[MAX_ANSWERS] = max(COUNTS[1] + 1, ANSWERS[MAX_ANSWERS - 1]);

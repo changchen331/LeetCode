@@ -8,7 +8,9 @@ unordered_set<int> POWER_OF_TWO;
 int init = []
 {
     for (int i = 0; i < 31; i++)
+    {
         POWER_OF_TWO.insert(1 << i);
+    }
     return 0;
 }();
 

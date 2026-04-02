@@ -25,7 +25,9 @@ public:
         // {
         //     vector<int> &dominoe_left = dominoes[i];
         //     if (!dominoe_left[0])
+        //     {
         //         continue;
+        //     }
 
         //     int count = 1;
         //     for (int j = i + 1; j < size; j++)

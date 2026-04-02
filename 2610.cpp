@@ -16,7 +16,9 @@ public:
         {
             int &number = numbers[num];
             if (number <= count)
+            {
                 answer[number].push_back(num);
+            }
             else
             {
                 answer.push_back({num});
@@ -38,7 +40,9 @@ int main(int argc, char const *argv[])
     for (auto &&ans : answer)
     {
         for (auto &&a : ans)
+        {
             cout << a << " ";
+        }
         cout << endl;
     }
 

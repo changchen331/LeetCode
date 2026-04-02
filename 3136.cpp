@@ -14,20 +14,28 @@ public:
 
         int length = word.length();
         if (length < 3)
+        {
             return false;
+        }
 
         bool hasVowel = false, hasConsonant = false;
         for (auto &&c : word)
         {
             if ((c < '0' || c > '9') && (c < 'A' || c > 'z'))
+            {
                 return false;
+            }
 
             if ('A' <= c && c <= 'z')
             {
                 if (!hasVowel && vowels.find(tolower(c)) != vowels.end())
+                {
                     hasVowel = true;
+                }
                 else if (!hasConsonant && vowels.find(tolower(c)) == vowels.end())
+                {
                     hasConsonant = true;
+                }
             }
         }
 

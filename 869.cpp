@@ -6,7 +6,9 @@ vector<string> POWER_OF_TWO;
 int init = []
 {
     for (int i = 0; i < 31; i++)
+    {
         POWER_OF_TWO.push_back(to_string(1 << i));
+    }
     return 0;
 }();
 
@@ -22,9 +24,13 @@ public:
         {
             int p_length = pot.length();
             if (length < p_length)
+            {
                 break;
+            }
             if (length > p_length)
+            {
                 continue;
+            }
             if (length == p_length)
             {
                 string temp = num;
@@ -33,7 +39,9 @@ public:
                 {
                     int position = temp.find(p);
                     if (position != -1)
+                    {
                         temp[position] = 'e';
+                    }
                     else
                     {
                         flag = false;
@@ -41,7 +49,9 @@ public:
                     }
                 }
                 if (flag)
+                {
                     return true;
+                }
             }
         }
 

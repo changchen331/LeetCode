@@ -34,7 +34,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.findWordsContaining(words, x);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

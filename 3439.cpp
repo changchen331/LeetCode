@@ -23,7 +23,9 @@ public:
                 length++;
             }
             else
+            {
                 temp += freeTimes[i] - freeTimes[i - (k + 1)];
+            }
 
             current = endTime[i];
             answer = max(answer, temp);

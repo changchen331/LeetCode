@@ -16,10 +16,14 @@ public:
         for (int i = 1; i <= n; i++)
         {
             if (i >= n - forget + 1)
+            {
                 answer += memories[i];
+            }
 
             for (int j = i + delay; j <= min(i + forget - 1, n); j++)
+            {
                 memories[j] = (memories[j] + memories[i]) % MOD;
+            }
         }
 
         return answer % MOD;

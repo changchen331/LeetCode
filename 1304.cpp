@@ -26,7 +26,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.sumZero(n);
     for (auto &&ans : answer)
+    {
         cout << ans << (ans != answer.back() ? " " : "\n");
+    }
 
     return 0;
 }

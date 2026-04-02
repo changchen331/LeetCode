@@ -17,7 +17,9 @@ public:
         while (power)
         {
             if (power & 1)
+            {
                 answer *= x;
+            }
             x *= x;
             power >>= 1;
         }

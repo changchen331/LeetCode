@@ -16,7 +16,9 @@ public:
         arr2 = nums2;
 
         for (auto &&num : nums2)
+        {
             counts[num]++;
+        }
     }
 
     void add(int index, int val)
@@ -31,7 +33,9 @@ public:
         int response = 0;
 
         for (auto &&a1 : arr1)
+        {
             response += counts.find(tot - a1) != counts.end() ? counts[tot - a1] : 0;
+        }
 
         return response;
     }
@@ -56,7 +60,9 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < commands.size(); i++)
     {
         if (commands[i] == "count")
+        {
             cout << findSumPairs.count(values[i][0]) << " ";
+        }
         else if (commands[i] == "add")
         {
             findSumPairs.add(values[i][0], values[i][1]);

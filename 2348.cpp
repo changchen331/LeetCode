@@ -16,13 +16,17 @@ public:
             if (nums[i] != 0)
             {
                 if (start + 1 < i)
+                {
                     answer += 1LL * (i - start - 1) * (i - start) / 2;
+                }
                 start = i;
             }
         }
 
         if (start + 1 < size)
+        {
             answer += 1LL * (size - start - 1) * (size - start) / 2;
+        }
 
         return answer;
     }

@@ -9,7 +9,9 @@ public:
         int answer = (1 + n) * n / 2;
 
         for (int i = m; i <= n; i += m)
+        {
             answer -= 2 * i;
+        }
 
         return answer;
     }

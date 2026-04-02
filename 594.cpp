@@ -15,25 +15,37 @@ public:
         while (head < size)
         {
             if (size - head <= answer)
+            {
                 break;
+            }
 
             int diff = nums[tail] - nums[head];
             if (diff < 1)
             {
                 if (tail < size - 1)
+                {
                     tail++;
+                }
                 else
+                {
                     head++;
+                }
             }
             else if (diff > 1)
+            {
                 head++;
+            }
             else
             {
                 answer = max(answer, tail - head + 1);
                 if (tail < size - 1)
+                {
                     tail++;
+                }
                 else
+                {
                     head++;
+                }
             }
         }
 

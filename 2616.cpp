@@ -30,7 +30,9 @@ public:
 
         vector<int> diffs(size - 1, 0);
         for (int i = 0; i < size - 1; i++)
+        {
             diffs[i] = nums[i + 1] - nums[i];
+        }
 
         int left = 0, right = nums.back() - nums.front();
         answer = right;
@@ -43,7 +45,9 @@ public:
                 right = mid - 1;
             }
             else
+            {
                 left = mid + 1;
+            }
         }
 
         return answer;

@@ -12,9 +12,13 @@ public:
         for (auto &&operation : operations)
         {
             if (operation[1] == '+')
+            {
                 answer++;
+            }
             else
+            {
                 answer--;
+            }
         }
 
         return answer;

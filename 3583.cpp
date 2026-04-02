@@ -23,7 +23,9 @@ private:
                 left = mid + 1;
             }
             else
+            {
                 right = mid - 1;
+            }
         }
         // 查找比目标大的最小数
         left = 0, right = nums.size() - 1;
@@ -36,7 +38,9 @@ private:
                 right = mid - 1;
             }
             else
+            {
                 left = mid + 1;
+            }
         }
 
         return {max_min, min_max};
@@ -59,7 +63,9 @@ public:
         {
             int num = nums[i] * 2;
             if (memories.find(num) == memories.end())
+            {
                 continue;
+            }
 
             vector<int> &memory = memories[num];
             int length = memory.size();
@@ -67,7 +73,9 @@ public:
             pair<int, int> response = find_boundaries(memory, i);
             int min_max = response.first, max_min = response.second;
             if (min_max < 0 || max_min < 0)
+            {
                 continue;
+            }
 
             answer += 1LL * (min_max + 1) * (length - max_min);
             answer %= MOD;

@@ -14,9 +14,13 @@ public:
         {
             int count = 0;
             for (auto &&cell : floor)
+            {
                 count += cell - '0';
+            }
             if (count == 0)
+            {
                 continue;
+            }
 
             if (last == -1)
             {

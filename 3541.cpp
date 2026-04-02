@@ -22,15 +22,21 @@ public:
             if (current != last || i == length)
             {
                 if (vowels.find(last) != vowels.end())
+                {
                     max_v = max(max_v, count);
+                }
                 else
+                {
                     max_c = max(max_c, count);
+                }
 
                 last = current;
                 count = 1;
             }
             else
+            {
                 count++;
+            }
         }
 
         answer = max_v + max_c;

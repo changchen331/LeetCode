@@ -19,8 +19,13 @@ private:
         }
 
         for (auto &&num : nums)
+        {
             if (num)
+            {
                 return false;
+            }
+        }
+
         return true;
     }
 
@@ -30,8 +35,12 @@ public:
         int answer = 0, size = nums.size();
 
         for (int i = 0; i < size; i++)
+        {
             if (nums[i] == 0)
+            {
                 answer += go(nums, i, -1) + go(nums, i, 1);
+            }
+        }
 
         return answer;
     }

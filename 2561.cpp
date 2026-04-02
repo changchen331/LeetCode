@@ -24,22 +24,34 @@ public:
         for (auto &&[x, c] : count)
         {
             if (c % 2 != 0)
+            {
                 return -1;
+            }
 
             minimum = min(minimum, x);
             if (c > 0)
+            {
                 for (int i = 0; i < (c / 2); i++)
+                {
                     a.push_back(x);
+                }
+            }
             else
+            {
                 for (int i = 0; i < (-c / 2); i++)
+                {
                     b.push_back(x);
+                }
+            }
         }
 
         sort(a.begin(), a.end());
         sort(b.begin(), b.end(), greater<int>());
 
         for (int i = 0; i < a.size(); i++)
+        {
             answer += min({a[i], b[i], minimum * 2});
+        }
 
         return answer;
     }

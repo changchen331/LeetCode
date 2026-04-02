@@ -12,17 +12,23 @@ private:
     int dfs(int i, int m, int n)
     {
         if (i < 0)
+        {
             return 0;
+        }
 
         int &memory = memories[i][m][n];
         if (memory != -1)
+        {
             return memory;
+        }
 
         memory = dfs(i - 1, m, n);
         int count0 = counts0[i];
         int count1 = strings[i].length() - count0;
         if (m >= count0 && n >= count1)
+        {
             memory = max(memory, dfs(i - 1, m - count0, n - count1) + 1);
+        }
 
         return memory;
     }
@@ -35,8 +41,12 @@ public:
 
         counts0 = vector<int>(size, 0);
         for (int i = 0; i < size; i++)
+        {
             for (auto &&cha : strs[i])
+            {
                 counts0[i] += (cha == '0');
+            }
+        }
 
         memories = vector(size, vector(m + 1, vector<int>(n + 1, -1)));
 

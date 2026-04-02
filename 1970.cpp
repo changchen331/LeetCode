@@ -21,7 +21,9 @@ public:
     {
         // 如果 fa[x] == x，则表示 x 是代表元
         if (fa[x] != x)
+        {
             fa[x] = find(fa[x]); // fa 改成代表元
+        }
         return fa[x];
     }
 
@@ -65,19 +67,27 @@ public:
             land[r][c] = true; // 变成陆地
 
             if (r == 0)
+            {
                 uf.merge(v, top); // 与最上边相连
+            }
             if (r == row - 1)
+            {
                 uf.merge(v, bot); // 与最下边相连
+            }
 
             for (auto &&d : DIRS)
             {
                 int x = r + d[0], y = c + d[1];
                 if (0 <= x && x < row && 0 <= y && y < col && land[x][y])
+                {
                     uf.merge(v, x * col + y); // 与四周的陆地相连
+                }
             }
 
             if (uf.is_same(top, bot))
+            {
                 return day; // 最上边和最下边连通
+            }
         }
 
         return answer;

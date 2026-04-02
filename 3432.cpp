@@ -11,16 +11,25 @@ public:
 
         int count = 0;
         for (auto &&num : nums)
+        {
             if (num % 2)
+            {
                 count++;
+            }
+        }
+
         if (count % 2)
+        {
             return 0;
+        }
 
         int current = 0;
         for (int i = 0; i < size - 1; i++)
         {
             if (nums[i] % 2)
+            {
                 current++;
+            }
             answer += (current % 2) == ((count - current) % 2);
         }
 

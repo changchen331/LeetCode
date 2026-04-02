@@ -18,7 +18,9 @@ public:
             if (record == current)
             {
                 if (++count > 1)
+                {
                     continue;
+                }
             }
             else
             {

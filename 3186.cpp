@@ -14,14 +14,20 @@ private:
     long long dfs(int position)
     {
         if (position < 0)
+        {
             return 0;
+        }
         long long &memory = memories[position];
         if (memory != -1)
+        {
             return memory;
+        }
 
         int key = keys[position], temp = position - 1;
         while (temp > -1 && keys[temp] >= key - 2)
+        {
             temp--;
+        }
         memory = max(dfs(position - 1), dfs(temp) + 1L * key * powers[key]); // max(不选, 选)
         return memory;
     }
@@ -46,7 +52,9 @@ public:
                 count = 1;
             }
             else
+            {
                 count++;
+            }
         }
         size = keys.size();
         memories.resize(size, -1);

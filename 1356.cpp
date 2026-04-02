@@ -11,7 +11,9 @@ private:
         bool operator()(const pair<int, int> &a, const pair<int, int> &b)
         {
             if (a.first != b.first)
+            {
                 return a.first < b.first;
+            }
 
             return a.second < b.second;
         }
@@ -37,7 +39,9 @@ public:
         sort(pairs.begin(), pairs.end(), Comparator());
 
         for (auto &&p : pairs)
+        {
             answer.emplace_back(p.second);
+        }
 
         return answer;
     }
@@ -50,7 +54,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.sortByBits(arr);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

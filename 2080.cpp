@@ -15,9 +15,13 @@ private:
         {
             int middle = left + (right - left) / 2;
             if (positions[middle] >= value)
+            {
                 right = middle - 1;
+            }
             else
+            {
                 left = middle + 1;
+            }
         }
         return left;
     }
@@ -26,14 +30,18 @@ public:
     RangeFreqQuery(vector<int> &arr)
     {
         for (int i = 0; i < arr.size(); i++)
+        {
             value_positions[arr[i]].push_back(i);
+        }
     }
 
     int query(int left, int right, int value)
     {
         auto temp = value_positions.find(value);
         if (temp == value_positions.end())
+        {
             return 0;
+        }
         vector<int> &positons = temp->second;
         return binary_search(positons, right + 1) -
                binary_search(positons, left);

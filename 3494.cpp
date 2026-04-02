@@ -18,11 +18,15 @@ public:
 
             // 算最大值
             for (int j = 1; j < size_wizard; j++)
+            {
                 memories[j] = max(memories[j], memories[j - 1]) + skill[j] * mp;
+            }
 
             // 整理时间
             for (int j = size_wizard - 2; j >= 0; j--)
+            {
                 memories[j] = memories[j + 1] - skill[j + 1] * mp;
+            }
         }
 
         answer = memories.back();

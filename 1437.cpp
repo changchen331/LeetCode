@@ -16,7 +16,9 @@ public:
             if (num == 1)
             {
                 if (record != -1 && i - record <= k)
+                {
                     return false;
+                }
                 record = i;
             }
         }

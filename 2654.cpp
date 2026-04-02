@@ -19,11 +19,15 @@ public:
             count += nums[i] == 1;
         }
         if (record != 1)
+        {
             return -1;
+        }
 
         // 如果存在 1
         if (count > 0)
+        {
             return size - count;
+        }
 
         // 暴力
         int minimum = INT_MAX;
@@ -40,7 +44,9 @@ public:
                 }
             }
             if (minimum == 1)
+            {
                 break;
+            }
         }
 
         answer = minimum + size - 1;

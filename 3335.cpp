@@ -13,7 +13,9 @@ public:
 
         vector<int> count(26, 0);
         for (auto &&c : s)
+        {
             count[c - 'a']++;
+        }
 
         for (int round = 0; round < t; round++)
         {
@@ -22,12 +24,16 @@ public:
             next[1] = (count[25] + count[0]) % MOD;
 
             for (int i = 2; i < 26; i++)
+            {
                 next[i] = count[i - 1];
+            }
             count = move(next);
         }
 
         for (int i = 0; i < 26; i++)
+        {
             answer = (answer + count[i]) % MOD;
+        }
 
         return answer;
     }

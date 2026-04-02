@@ -16,7 +16,9 @@ public:
         {
             int a = conflictingPair[0], b = conflictingPair[1];
             if (a > b)
+            {
                 swap(a, b);
+            }
             groups[a].push_back(b);
         }
 

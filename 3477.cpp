@@ -15,12 +15,18 @@ public:
 
             int position = 0;
             while (position < size && current > baskets[position])
+            {
                 position++;
+            }
 
             if (position < size)
+            {
                 baskets[position] = 0;
+            }
             else
+            {
                 answer++;
+            }
         }
 
         return answer;

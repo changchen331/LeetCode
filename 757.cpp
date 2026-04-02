@@ -11,7 +11,9 @@ private:
         for (int i = pos; i >= 0; i--)
         {
             if (intervals[i][1] < num)
+            {
                 break;
+            }
             temp[i].push_back(num);
         }
     }
@@ -23,8 +25,11 @@ public:
         int n = intervals.size();
         int m = 2;
         sort(intervals.begin(), intervals.end(), [&](vector<int> &a, vector<int> &b)
-             { if (a[0] == b[0]) 
-                return a[1] > b[1];
+             {
+                 if (a[0] == b[0]) 
+                 {
+                    return a[1] > b[1];
+                 }
             return a[0] < b[0]; });
 
         vector<vector<int>> temp(n);

@@ -22,14 +22,18 @@ public:
         //         count.clear();
         //         xx = x - 1, yy = y - 1;
         //         while (xx >= 0 && yy >= 0)
+        //         {
         //             count.insert(grid[xx--][yy--]);
+        //         }
         //         left = count.size();
 
         //         // 右
         //         count.clear();
         //         xx = x + 1, yy = y + 1;
         //         while (xx < size && yy < length)
+        //         {
         //             count.insert(grid[xx++][yy++]);
+        //         }
         //         right = count.size();
 
         //         answer[x][y] = abs(left - right);
@@ -76,7 +80,9 @@ int main(int argc, char const *argv[])
     for (auto &&ans : answer)
     {
         for (auto &&a : ans)
+        {
             cout << a << " ";
+        }
         cout << endl;
     }
 

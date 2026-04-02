@@ -28,7 +28,9 @@ int main(int argc, char const *argv[])
 
     vector<bool> answer = solution.prefixesDivBy5(nums);
     for (auto &&ans : answer)
+    {
         cout << (ans ? "true" : "false") << " ";
+    }
     cout << endl;
 
     return 0;

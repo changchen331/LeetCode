@@ -16,17 +16,23 @@ private:
             if (num % i == 0)
             {
                 if (i * i != num)
+                {
                     record.emplace_back(num / i);
+                }
                 record.emplace_back(i);
 
                 sum += i + (num / i);
             }
             if (record.size() > 4)
+            {
                 return 0;
+            }
         }
 
         if (record.size() == 4)
+        {
             return sum;
+        }
         return 0;
     }
 
@@ -41,9 +47,13 @@ public:
             int &num = nums[i];
 
             if (memories.find(num) != memories.end())
+            {
                 answer += memories[num];
+            }
             else
+            {
                 answer += memories[num] = count_divisor(num);
+            }
         }
 
         return answer;

@@ -13,7 +13,9 @@ public:
 
         vector<pair<int, int>> values;
         for (int i = 0; i < size; i++)
+        {
             values.push_back({i, nums[i]});
+        }
 
         // 按照数值排序（从大到小）
         sort(values.begin(), values.end(), [&](auto x1, auto x2)
@@ -22,7 +24,9 @@ public:
         sort(values.begin(), values.begin() + k);
 
         for (int i = 0; i < k; i++)
+        {
             answer[i] = values[i].second;
+        }
 
         return answer;
     }
@@ -36,7 +40,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.maxSubsequence(nums, k);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

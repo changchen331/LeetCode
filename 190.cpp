@@ -15,7 +15,9 @@ public:
             n >>= 1;
         }
         while (temp.length() < 32)
+        {
             temp.push_back('0');
+        }
 
         answer = stoi(temp, nullptr, 2);
         return answer;

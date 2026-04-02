@@ -22,7 +22,9 @@ public:
             }
 
             if (right + 1 == size && count < k)
+            {
                 break;
+            }
         }
 
         return answer;

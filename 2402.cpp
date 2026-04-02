@@ -23,7 +23,9 @@ public:
 
         priority_queue<int, vector<int>, greater<>> idle; // 会议室编号
         for (int i = 0; i < n; i++)
+        {
             idle.push(i);
+        }
 
         priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<>> using_; // (结束时间，会议室编号)
         vector<int> cnt(n);                                                                   // 会议室的开会次数

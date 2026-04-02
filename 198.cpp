@@ -11,9 +11,13 @@ private:
     int dfs(int position)
     {
         if (position < 0)
+        {
             return 0;
+        }
         if (memories[position] != -1)
+        {
             return memories[position];
+        }
 
         int &memory = memories[position];
         memory = max(dfs(position - 1), dfs(position - 2) + money[position]);

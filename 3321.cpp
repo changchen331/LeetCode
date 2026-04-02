@@ -16,7 +16,9 @@ private:
     {
         pii p = {count[x], x};
         if (p.first == 0)
+        {
             return;
+        }
 
         if (!L.empty() && p > *L.begin())
         {
@@ -24,14 +26,18 @@ private:
             L.insert(p);
         }
         else
+        {
             R.insert(p);
+        }
     }
 
     void del(int x)
     {
         pii p = {count[x], x};
         if (p.first == 0)
+        {
             return;
+        }
 
         auto it = L.find(p);
         if (it != L.end())
@@ -40,7 +46,9 @@ private:
             L.erase(p);
         }
         else
+        {
             R.erase(p);
+        }
     }
 
     void l2r()
@@ -77,13 +85,19 @@ public:
 
             int l = r - k + 1;
             if (l < 0)
+            {
                 continue;
+            }
 
             // 维护大小
             while (!R.empty() && L.size() < x)
+            {
                 r2l();
+            }
             while (L.size() > x)
+            {
                 l2r();
+            }
             answer[l] = sum_l;
 
             // 移除
@@ -106,7 +120,9 @@ int main(int argc, char const *argv[])
 
     vector<long long> answer = solution.findXSum(nums, k, x);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

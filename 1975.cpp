@@ -22,14 +22,18 @@ public:
 
                 num = abs(num);
                 if (!zero && num == 0)
+                {
                     zero = true;
+                }
                 minimum = min(minimum, num);
                 answer += num;
             }
         }
 
         if (!zero && count % 2 == 1)
+        {
             answer -= 2 * minimum;
+        }
 
         return answer;
     }

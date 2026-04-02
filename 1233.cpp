@@ -13,7 +13,9 @@ public:
 
         sort(folder.begin(), folder.end());
         // for (auto &&f : folder)
+        // {
         //     cout << f << " ";
+        // }
         // cout << endl;
 
         answer.emplace_back(folder[0]);
@@ -26,10 +28,14 @@ public:
                 string temp = answer.back();
 
                 if (temp + '/' != current.substr(0, temp.length() + 1))
+                {
                     answer.emplace_back(current);
+                }
             }
             else
+            {
                 answer.emplace_back(current);
+            }
         }
 
         return answer;
@@ -43,7 +49,9 @@ int main(int argc, char const *argv[])
 
     vector<string> answer = solution.removeSubfolders(folder);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

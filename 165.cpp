@@ -20,7 +20,9 @@ public:
                 {
                     char current = version1[position1];
                     if (current == '.')
+                    {
                         break;
+                    }
                     record1.push_back(current);
                 }
                 position1++;
@@ -33,7 +35,9 @@ public:
                 {
                     char current = version2[position2];
                     if (current == '.')
+                    {
                         break;
+                    }
                     record2.push_back(current);
                 }
                 position2++;
@@ -41,9 +45,13 @@ public:
 
             int temp1 = stoi(record1), temp2 = stoi(record2);
             if (temp1 > temp2)
+            {
                 return 1;
+            }
             else if (temp1 < temp2)
+            {
                 return -1;
+            }
         }
 
         return 0;

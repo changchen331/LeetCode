@@ -13,12 +13,16 @@ public:
         // 找出最大天数
         int maximum = 0;
         for (auto &&event : events)
+        {
             maximum = max(maximum, event[1]);
+        }
 
         // 按照开始时间分组
         vector<vector<int>> groups(maximum + 1);
         for (auto &&event : events)
+        {
             groups[event[0]].push_back(event[1]);
+        }
 
         // 计算最大参与会议
         priority_queue<int, vector<int>, greater<>> pq;
@@ -26,11 +30,15 @@ public:
         {
             // 删除过期会议
             while (!pq.empty() && pq.top() < day)
+            {
                 pq.pop();
+            }
 
             // 新增会议
             for (auto &&group : groups[day])
+            {
                 pq.push(group);
+            }
 
             // 参加会议
             if (!pq.empty())

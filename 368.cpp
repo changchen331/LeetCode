@@ -11,12 +11,16 @@ private:
     {
         int &response = MEMORIES[i];
         if (response)
+        {
             return response;
+        }
 
         for (int j = 0; j < i; j++)
         {
             if (NUMS[i] % NUMS[j])
+            {
                 continue;
+            }
 
             int f = dfs(j);
             if (f > response)
@@ -52,7 +56,9 @@ public:
         }
 
         for (int i = max_i; i >= 0; i = FROM[i])
+        {
             answer.push_back(nums[i]);
+        }
         return answer;
     }
 };
@@ -64,7 +70,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.largestDivisibleSubset(nums);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

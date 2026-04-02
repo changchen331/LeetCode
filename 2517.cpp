@@ -10,12 +10,16 @@ private:
     {
         int last = price[0], count = 1;
         for (int i = 1; i < price.size(); i++)
+        {
             if (price[i] - last >= difference)
             {
                 last = price[i];
                 if (++count == k)
+                {
                     break;
+                }
             }
+        }
         return count == k;
     }
 
@@ -27,16 +31,22 @@ public:
         int left = 0;
         int right = (price.back() - price[0]) / (k - 1) + 1;
         if (k == 2)
+        {
             return right - 1;
+        }
 
         while (left + 1 < right)
         {
             int middle = left + (right - left) / 2;
 
             if (check(price, k, middle))
+            {
                 left = middle;
+            }
             else
+            {
                 right = middle;
+            }
         }
 
         return left;

@@ -29,7 +29,9 @@ public:
         // // 后缀
         // vector<int> memories(size);
         // for (int i = size - 2; i >= current; i--)
+        // {
         //     memories[i] = memories[i + 1] | nums[i + 1];
+        // }
         // for (; current < size; current++)
         // {
         //     int num = nums[current];
@@ -40,9 +42,13 @@ public:
         // 方法二
         vector<int> memories(size); // 后缀
         for (int i = size - 2; i >= 0; i--)
+        {
             memories[i] = memories[i + 1] | nums[i + 1];
+        }
         for (int i = 0, memory = 0; i < size; memory |= nums[i++])
+        {
             answer = max(answer, memory | (long long)nums[i] << k | memories[i]);
+        }
 
         return answer;
     }

@@ -75,11 +75,17 @@ int main(int argc, char const *argv[])
             cout << "null";
         }
         else if (command == "deleteText")
+        {
             cout << textEditor->deleteText(stoi(value));
+        }
         else if (command == "cursorLeft")
+        {
             cout << "\"" << textEditor->cursorLeft(stoi(value)) << "\"";
+        }
         else
+        {
             cout << "\"" << textEditor->cursorRight(stoi(value)) << "\"";
+        }
         cout << (i < commands.size() - 1 ? ", " : "");
     }
 

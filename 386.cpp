@@ -10,11 +10,15 @@ private:
     void dfs(vector<int> &answer, int current)
     {
         if (current > limit)
+        {
             return;
+        }
 
         answer.push_back(current);
         for (int i = 0; i < 10; i++)
+        {
             dfs(answer, current * 10 + i);
+        }
     }
 
 public:
@@ -25,15 +29,21 @@ public:
         // 我的解法
         // vector<string> temp(n);
         // for (int i = 1; i <= n; i++)
+        // {
         //     temp[i - 1] = to_string(i);
+        // }
         // sort(temp.begin(), temp.end());
         // for (auto &&t : temp)
+        // {
         //     answer.push_back(stoi(t));
+        // }
 
         // 解法二
         limit = n;
         for (int i = 1; i < 10; i++)
+        {
             dfs(answer, i);
+        }
 
         return answer;
     }
@@ -46,7 +56,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.lexicalOrder(n);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

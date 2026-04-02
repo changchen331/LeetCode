@@ -16,7 +16,9 @@ public:
         {
             int mini = nums[i], mid = nums[i + 1], maxi = nums[i + 2];
             if (maxi - mini > k || maxi - mid > k || mid - mini > k)
+            {
                 return {};
+            }
             answer[i / 3] = {mini, mid, maxi};
         }
 
@@ -34,7 +36,9 @@ int main(int argc, char const *argv[])
     for (auto &&ans : answer)
     {
         for (auto &&a : ans)
+        {
             cout << a << " ";
+        }
         cout << endl;
     }
 

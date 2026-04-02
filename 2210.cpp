@@ -16,15 +16,23 @@ public:
             // 前
             int front = i - 1;
             for (; front > 0; front--)
+            {
                 if (nums[front] != current)
+                {
                     break;
+                }
+            }
             front = nums[front];
 
             // 后
             int behind = i + 1;
             for (; behind < size - 1; behind++, i++)
+            {
                 if (nums[behind] != current)
+                {
                     break;
+                }
+            }
             behind = nums[behind];
 
             // 判断

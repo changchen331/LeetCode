@@ -10,7 +10,9 @@ private:
     {
         int size = cards.size();
         if (size == 1)
+        {
             return abs(cards[0] - 24) < EPS;
+        }
 
         for (int i = 0; i < size; i++)
         {
@@ -21,9 +23,13 @@ private:
 
                 vector<double> situations = {x + y, x - y, y - x, x * y};
                 if (abs(y) > EPS)
+                {
                     situations.push_back(x / y);
+                }
                 if (abs(x) > EPS)
+                {
                     situations.push_back(y / x);
+                }
 
                 vector<double> new_cards = cards;
                 new_cards.erase(new_cards.begin() + j);
@@ -31,7 +37,9 @@ private:
                 {
                     new_cards[i] = situation;
                     if (dfs(new_cards))
+                    {
                         return true;
+                    }
                 }
             }
         }

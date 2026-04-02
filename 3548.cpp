@@ -15,8 +15,12 @@ private:
 
         vector response(n, vector<int>(m, 0));
         for (int i = 0; i < m; i++)
+        {
             for (int j = 0; j < n; j++)
+            {
                 response[n - 1 - j][i] = grid[i][j];
+            }
+        }
 
         return response;
     }
@@ -27,8 +31,12 @@ private:
 
         vector response(m, vector<int>(n, 0));
         for (int i = 0; i < m; i++)
+        {
             for (int j = 0; j < n; j++)
+            {
                 response[i][j] = grid[i][n - j - 1];
+            }
+        }
 
         return response;
     }
@@ -47,25 +55,35 @@ private:
                 count += current;
                 // 第一列
                 if (j > 0 || i == 0 || i == m - 1)
+                {
                     can_delete.insert(current);
+                }
             }
 
             // 只有一行
             if (m == 1)
             {
                 if (count * 2 == total || (count * 2 - total) == grid[0][0] || (count * 2 - total) == grid[0][j])
+                {
                     return true;
+                }
                 continue;
             }
 
             // 判断是否能通过删除一个元素来达到平衡
             if (can_delete.find(count * 2 - total) != can_delete.end())
+            {
                 return true;
+            }
 
             // 列数 > 1，现在能删除第一列的任意元素
             if (j == 0)
+            {
                 for (int i = 0; i < m; i++)
+                {
                     can_delete.insert(grid[i][0]);
+                }
+            }
         }
 
         return false;
@@ -77,14 +95,22 @@ public:
         int m = grid.size(), n = grid[0].size();
 
         for (auto &&row : grid)
+        {
             for (auto &&element : row)
+            {
                 total += element;
+            }
+        }
 
         if (check(grid) || check(inversion(grid)))
+        {
             return true;
+        }
         grid = rotate(grid);
         if (check(grid) || check(inversion(grid)))
+        {
             return true;
+        }
 
         return false;
     }

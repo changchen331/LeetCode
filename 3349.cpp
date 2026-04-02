@@ -23,7 +23,9 @@ public:
                 }
             }
             if (!flaga)
+            {
                 continue;
+            }
 
             // b
             for (int j = i + k + 1; j < i + 2 * k; j++)

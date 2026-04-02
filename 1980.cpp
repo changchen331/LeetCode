@@ -13,9 +13,13 @@ public:
         for (int i = 0; i < size; i++)
         {
             if (nums[i][i] == '0')
+            {
                 answer.push_back('1');
+            }
             else
+            {
                 answer.push_back('0');
+            }
         }
 
         return answer;

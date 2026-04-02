@@ -14,7 +14,9 @@ public:
         {
             int &digit = digits[position];
             if (digit == 9)
+            {
                 digit = 0;
+            }
             else
             {
                 digit++;
@@ -23,7 +25,9 @@ public:
         }
 
         if (position == -1)
+        {
             digits.insert(digits.begin(), 1);
+        }
         return digits;
     }
 };
@@ -35,7 +39,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.plusOne(digits);
     for (auto &&ans : answer)
+    {
         cout << ans;
+    }
     cout << endl;
 
     return 0;

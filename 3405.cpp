@@ -13,7 +13,9 @@ long long qpow(long long x, int n)
     for (; n > 0; n /= 2)
     {
         if (n % 2)
+        {
             res = res * x % MOD;
+        }
         x = x * x % MOD;
     }
 
@@ -28,11 +30,15 @@ auto init = []
 {
     F[0] = 1;
     for (int i = 1; i < MX; i++)
+    {
         F[i] = F[i - 1] * i % MOD;
+    }
 
     INV_F[MX - 1] = qpow(F[MX - 1], MOD - 2);
     for (int i = MX - 1; i > 0; i--)
+    {
         INV_F[i - 1] = INV_F[i] * i % MOD;
+    }
 
     return 0;
 }();

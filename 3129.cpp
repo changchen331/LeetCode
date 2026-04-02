@@ -11,13 +11,19 @@ private:
     int dfs(vector<vector<vector<int>>> &ms, int i, int j, int k)
     {
         if (i == 0)
+        {
             return k == 1 && j <= LIMIT;
+        }
         if (j == 0)
+        {
             return k == 0 && i <= LIMIT;
+        }
 
         int &response = ms[i][j][k];
         if (response != -1)
+        {
             return response;
+        }
 
         if (k == 0)
         {

@@ -25,7 +25,9 @@ public:
                 else
                 {
                     if (i == 0)
+                    {
                         return answer;
+                    }
 
                     sums[i][j] = k + 1;
                     break;

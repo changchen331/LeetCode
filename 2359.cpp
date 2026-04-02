@@ -11,7 +11,9 @@ private:
         vector<int> dis(size, size);
 
         for (int d = 0; node >= 0 && dis[node] == size; node = edges[node])
+        {
             dis[node] = d++;
+        }
 
         return dis;
     }

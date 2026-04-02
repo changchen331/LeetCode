@@ -42,13 +42,19 @@ public:
 
             num = (num << 1) + node->val;
             if (node->left == nullptr && node->right == nullptr)
+            {
                 answer += num;
+            }
             else
             {
                 if (node->right != nullptr)
+                {
                     nodes.push({num, node->right});
+                }
                 if (node->left != nullptr)
+                {
                     nodes.push({num, node->left});
+                }
             }
         }
 
@@ -71,10 +77,14 @@ int main(int argc, char const *argv[])
         nodes.pop();
 
         if (position < root.size())
+        {
             nodes.push(node->left = new TreeNode(root[position++]));
+        }
 
         if (position < root.size())
+        {
             nodes.push(node->right = new TreeNode(root[position++]));
+        }
     }
 
     int answer = solution.sumRootToLeaf(head);

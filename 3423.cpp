@@ -10,7 +10,9 @@ public:
         int answer = 0, size = nums.size();
 
         for (int i = 1; i < size; i++)
+        {
             answer = max(answer, abs(nums[i] - nums[i - 1]));
+        }
 
         return max(answer, abs(nums[0] - nums.back()));
     }

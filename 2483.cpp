@@ -11,20 +11,28 @@ public:
 
         int penalty = 0;
         for (auto &&customer : customers)
+        {
             penalty += customer == 'N';
+        }
 
         int minimum = penalty;
         for (int i = length - 1; i >= 0; i--)
         {
             if (customers[i] == 'Y')
+            {
                 penalty++;
+            }
             else
+            {
                 penalty--;
+            }
 
             if (penalty <= minimum)
             {
                 if (penalty < minimum)
+                {
                     minimum = penalty;
+                }
                 answer = i;
             }
         }

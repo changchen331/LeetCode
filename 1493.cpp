@@ -15,19 +15,25 @@ public:
             if (nums[front] == 0)
             {
                 if (not_delete)
+                {
                     not_delete = false;
+                }
                 else
                 {
                     while (back < front)
                     {
                         if (nums[back++] == 0)
+                        {
                             break;
+                        }
                         count--;
                     }
                 }
             }
             else
+            {
                 answer = max(answer, ++count);
+            }
         }
 
         return answer - not_delete;

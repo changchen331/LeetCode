@@ -9,7 +9,9 @@ public:
         int answer = 0;
 
         while ((n & 1) == 0)
+        {
             n >>= 1;
+        }
 
         int count = 0;
         while (n > 0)

@@ -8,7 +8,9 @@ public:
     string answerString(string word, int numFriends)
     {
         if (numFriends == 1)
+        {
             return word;
+        }
 
         string answer = "";
         int length = word.length();
@@ -23,7 +25,9 @@ public:
                 answer = word.substr(i, min(length - i, length - numFriends + 1));
             }
             else if (current == maximum)
+            {
                 answer = max(answer, word.substr(i, min(length - i, length - numFriends + 1)));
+            }
         }
 
         return answer;

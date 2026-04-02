@@ -30,7 +30,9 @@ public:
 
         double total = 0;
         for (auto &&square : squares)
+        {
             total += 1.0 * square[2] * square[2];
+        }
         double target = total / 2.0;
 
         // 确定上下界
@@ -47,9 +49,13 @@ public:
         {
             double mid = low + (high - low) / 2;
             if (getAreaBelow(squares, mid) >= target)
+            {
                 high = mid; // 面积足够，说明分界线在 mid 或更下方
+            }
             else
+            {
                 low = mid; // 面积不够，说明分界线在 mid 上方
+            }
         }
 
         answer = high;

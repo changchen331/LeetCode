@@ -11,7 +11,9 @@ public:
         vector<int> characters(26, 0);
 
         for (auto &&c : s)
+        {
             answer += characters[c - 'a']++ == 0;
+        }
 
         return answer;
     }

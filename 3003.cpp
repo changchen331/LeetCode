@@ -24,13 +24,17 @@ private:
     int dfs(int i, int mask, bool changed)
     {
         if (i == str.length())
+        {
             return 1;
+        }
 
         // 把参数压缩到一个 long long 中，方便作为哈希表的 key
         long long args = (long long)i << 32 | mask << 1 | changed;
         auto it = memo.find(args);
         if (it != memo.end())
+        {
             return it->second; // 之前计算过
+        }
 
         int res;
         // 不改 s[i]
@@ -39,9 +43,13 @@ private:
         // 分割出一个子串，这个子串的最后一个字母在 i-1
         // s[i] 作为下一段的第一个字母，也就是 bit 作为下一段的 mask 的初始值
         if (popcount((uint32_t)new_mask) > kk)
+        {
             res = dfs(i + 1, bit, changed) + 1;
+        }
         else
+        {
             res = dfs(i + 1, new_mask, changed); // 不分割
+        }
 
         if (!changed)
         {
@@ -52,9 +60,13 @@ private:
                 // 分割出一个子串，这个子串的最后一个字母在 i-1
                 // j 作为下一段的第一个字母，也就是 1<<j 作为下一段的 mask 的初始值
                 if (popcount((uint32_t)new_mask) > kk)
+                {
                     res = max(res, dfs(i + 1, 1 << j, true) + 1);
+                }
                 else
+                {
                     res = max(res, dfs(i + 1, new_mask, true)); // 不分割
+                }
             }
         }
 

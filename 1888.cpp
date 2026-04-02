@@ -19,11 +19,17 @@ public:
         //     {
         //         int k = i + j;
         //         if (!change && s[k] == s[k - 1])
+        //         {
         //             change = true;
+        //         }
         //         else if (change && s[k] != s[k - 1])
+        //         {
         //             change = true;
+        //         }
         //         else
+        //         {
         //             change = false;
+        //         }
 
         //         temp += change;
         //     }
@@ -38,59 +44,91 @@ public:
             if (i % 2 == 1)
             {
                 if (s[i] == '0')
+                {
                     odd_0++;
+                }
                 else
+                {
                     odd_1++;
+                }
             }
             else
             {
                 if (s[i] == '0')
+                {
                     even_0++;
+                }
                 else
+                {
                     even_1++;
+                }
             }
         }
         if (odd_0 + even_1 >= odd_1 + even_0)
+        {
             answer = min(answer, odd_1 + even_0);
+        }
         else
+        {
             answer = min(answer, odd_0 + even_1);
+        }
 
         for (int i = 0, j = length; i < length; i++, j++)
         {
             if (i % 2 == 1)
             {
                 if (s[i] == '0')
+                {
                     odd_0--;
+                }
                 else
+                {
                     odd_1--;
+                }
             }
             else
             {
                 if (s[i] == '0')
+                {
                     even_0--;
+                }
                 else
+                {
                     even_1--;
+                }
             }
 
             if (j % 2 == 1)
             {
                 if (s[j] == '0')
+                {
                     odd_0++;
+                }
                 else
+                {
                     odd_1++;
+                }
             }
             else
             {
                 if (s[j] == '0')
+                {
                     even_0++;
+                }
                 else
+                {
                     even_1++;
+                }
             }
 
             if (odd_0 + even_1 >= odd_1 + even_0)
+            {
                 answer = min(answer, odd_1 + even_0);
+            }
             else
+            {
                 answer = min(answer, odd_0 + even_1);
+            }
         }
 
         return answer;

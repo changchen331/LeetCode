@@ -14,8 +14,12 @@ public:
         // {
         //     int xl = query[0], yt = query[1], xr = query[2], yb = query[3];
         //     for (int x = xl; x <= xr; x++)
+        //     {
         //         for (int y = yt; y <= yb; y++)
+        //         {
         //             answer[x][y]++;
+        //         }
+        //     }
         // }
 
         // 二维拆分
@@ -52,7 +56,9 @@ int main(int argc, char const *argv[])
     for (auto &&ans : answer)
     {
         for (auto &&a : ans)
+        {
             cout << a << " ";
+        }
         cout << endl;
     }
 

@@ -15,8 +15,12 @@ public:
 
         int top = complexity[0];
         for (int i = 1; i < size; i++)
+        {
             if (complexity[i] <= top)
+            {
                 return 0;
+            }
+        }
 
         for (int i = size - 1; i > 0; i--)
         {

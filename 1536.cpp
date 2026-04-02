@@ -11,8 +11,12 @@ public:
 
         vector<int> num_of_zero(size, 0);
         for (int i = 0; i < size; i++)
+        {
             for (int j = size - 1; j > -1 && grid[i][j] == 0; j--)
+            {
                 num_of_zero[i]++;
+            }
+        }
 
         for (int i = 1; i < size; i++)
         {
@@ -32,7 +36,9 @@ public:
                 }
             }
             if (!flag)
+            {
                 return -1;
+            }
         }
 
         return answer;

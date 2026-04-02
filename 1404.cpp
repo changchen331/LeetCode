@@ -15,14 +15,18 @@ public:
             {
                 int temp = end;
                 while (temp >= 0 && s[temp] == '1')
+                {
                     s[temp--] = '0';
+                }
                 if (temp < 0)
                 {
                     s = "1" + s;
                     end++;
                 }
                 else
+                {
                     s[temp] = '1';
+                }
 
                 answer += 2;
                 end--;

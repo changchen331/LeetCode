@@ -9,7 +9,9 @@ public:
     {
         int size = arr.size();
         if (size == 1)
+        {
             return {-1};
+        }
 
         // 方法 1（慢）
         // int max = *max_element(arr.begin() + 1, arr.end());
@@ -18,7 +20,9 @@ public:
         // for (int i = 1; i < arr.size() - 2; i++)
         // {
         //     if (arr[i] == max)
+        //     {
         //         max = *max_element(arr.begin() + i + 1, arr.end());
+        //     }
         //     arr[i] = max;
         // }
         // arr[size - 2] = arr[size - 1];
@@ -44,7 +48,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.replaceElements(arr);
     for (auto &&a : answer)
+    {
         cout << a << "\t";
+    }
     cout << endl;
 
     return 0;

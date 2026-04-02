@@ -29,7 +29,9 @@ public:
             if (count == size)
             {
                 for (int i = 1; i <= size; i++)
+                {
                     nums[start + i] = mID;
+                }
                 return start + 1;
             }
         }
@@ -74,9 +76,13 @@ int main(int argc, char const *argv[])
             cout << "null";
         }
         else if (command == "allocate")
+        {
             cout << allocator->allocate(value[0], value[1]);
+        }
         else
+        {
             cout << allocator->freeMemory(value[0]);
+        }
         cout << (i < commands.size() - 1 ? ", " : "");
     }
 

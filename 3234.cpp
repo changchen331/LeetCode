@@ -14,7 +14,9 @@ public:
         for (int r = 0; r < length; r++)
         {
             if (s[r] == '0')
+            {
                 position0.emplace_back(r);
+            }
             else
             {
                 total1++;

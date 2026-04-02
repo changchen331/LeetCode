@@ -20,7 +20,9 @@ public:
             int area = dimensions[i][0] * dimensions[i][1];
 
             if (max_dimension > plus)
+            {
                 continue;
+            }
             if (max_dimension < plus)
             {
                 max_dimension = plus;

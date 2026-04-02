@@ -9,10 +9,14 @@ private:
     bool dfs(vector<int> &nums, vector<vector<int>> &memories, int current, int need)
     {
         if (current < 0)
+        {
             return need == 0;
+        }
         int &memory = memories[current][need];
         if (memory >= 0)
+        {
             return memory;
+        }
 
         int num = nums[current];
         return memory = (need >= num &&
@@ -25,7 +29,9 @@ public:
     {
         int total = accumulate(nums.begin(), nums.end(), 0);
         if (total % 2)
+        {
             return false;
+        }
 
         int size = nums.size();
         vector<vector<int>> memories(size, vector<int>(total / 2 + 1, -1));

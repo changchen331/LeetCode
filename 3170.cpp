@@ -22,17 +22,25 @@ public:
         //         for (int j = 1; j < i; j++)
         //         {
         //             if (s[j] == '*')
+        //             {
         //                 continue;
+        //             }
 
         //             if (s[j] <= s[position])
+        //             {
         //                 position = j;
+        //             }
         //         }
         //         s[position] = '~';
         //     }
         // }
         // for (auto &&c : s)
+        // {
         //     if (c != '*' && c != '~')
-        //         answer.push_back(c);\
+        //     {
+        //         answer.push_back(c);
+        //     }
+        // }
 
         // 官解
         vector<stack<int>> letters(26);
@@ -48,7 +56,9 @@ public:
             for (auto &&letter : letters)
             {
                 if (letter.empty())
+                {
                     continue;
+                }
 
                 s[letter.top()] = '*';
                 letter.pop();
@@ -56,8 +66,12 @@ public:
             }
         }
         for (auto &&c : s)
+        {
             if (c != '*')
+            {
                 answer.push_back(c);
+            }
+        }
 
         return answer;
     }

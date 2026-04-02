@@ -16,7 +16,9 @@ public:
         {
             int current = pow(i, x);
             for (int j = n; j >= current; j--)
+            {
                 f[j] += f[j - current];
+            }
         }
 
         answer = f[n] % 1'000'000'007;

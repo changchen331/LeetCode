@@ -19,10 +19,15 @@ private:
 
         // 向下
         if (x + 1 < row_size && obstacleGrid[x + 1][y] == 0)
+        {
             dfs(x + 1, y, obstacleGrid);
+        }
+
         // 向右
         if (y + 1 < col_size && obstacleGrid[x][y + 1] == 0)
+        {
             dfs(x, y + 1, obstacleGrid);
+        }
     }
 
     // 官解
@@ -30,11 +35,17 @@ private:
     int DFS(int x, int y, vector<vector<int>> &obstacleGrid)
     {
         if (x < 0 || y < 0 || obstacleGrid[x][y] == 1)
+        {
             return 0;
+        }
         else if (x == 0 && y == 0)
+        {
             return 1;
+        }
         else if (memories[x][y] >= 0)
+        {
             return memories[x][y];
+        }
 
         memories[x][y] = DFS(x - 1, y, obstacleGrid) + DFS(x, y - 1, obstacleGrid);
         return memories[x][y];
@@ -44,7 +55,9 @@ public:
     int uniquePathsWithObstacles(vector<vector<int>> &obstacleGrid)
     {
         if (obstacleGrid[0][0] == 1)
+        {
             return 0;
+        }
         row_size = obstacleGrid.size();
         col_size = obstacleGrid[0].size();
 
@@ -54,7 +67,9 @@ public:
 
         // 官解
         for (int i = 0; i < row_size; i++)
+        {
             memories.push_back(vector<int>(col_size, -1));
+        }
         return DFS(row_size - 1, col_size - 1, obstacleGrid);
     }
 };

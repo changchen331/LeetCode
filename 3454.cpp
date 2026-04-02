@@ -74,9 +74,13 @@ private:
         spread(o);
         int m = (seg[o].l + seg[o].r) / 2;
         if (l <= m)
+        {
             update(o * 2, l, r, v);
+        }
         if (m < r)
+        {
             update(o * 2 + 1, l, r, v);
+        }
 
         maintain(o);
     }
@@ -84,7 +88,9 @@ private:
     unsigned int bit_width(unsigned int x)
     {
         if (x == 0)
+        {
             return 0;
+        }
 
         unsigned int width = 0;
         while (x)

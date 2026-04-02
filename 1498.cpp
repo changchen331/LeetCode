@@ -11,7 +11,9 @@ auto init = []
 {
     pow_2[0] = 1;
     for (int i = 1; i < MX; i++)
+    {
         pow_2[i] = (pow_2[i - 1] * 2) % MOD;
+    }
     return 0;
 }();
 
@@ -28,9 +30,13 @@ public:
         while (head <= tail)
         {
             if (nums[head] + nums[tail] <= target)
+            {
                 answer += pow_2[tail - head++];
+            }
             else
+            {
                 tail--;
+            }
         }
 
         return answer % MOD;

@@ -11,8 +11,12 @@ private:
     {
         belong[x] = cc;
         for (auto &&y : g[x])
+        {
             if (belong[y] < 0)
+            {
                 dfs(g, belong, y);
+            }
+        }
     }
 
 public:
@@ -44,7 +48,9 @@ public:
         {
             vector<int> &q = queries[i];
             if (q[0] == 2)
+            {
                 offline_time[q[1]] = i; // 记录最早离线时间
+            }
         }
 
         // 维护每个连通块的在线电站的最小编号
@@ -67,14 +73,22 @@ public:
             if (query[0] == 2)
             {
                 if (offline_time[x] == i)
+                {
                     mn[j] = min(mn[j], x);
+                }
             }
             else if (i < offline_time[x])
+            {
                 answer.push_back(x);
+            }
             else if (mn[j] != INT_MAX)
+            {
                 answer.push_back(mn[j]);
+            }
             else
+            {
                 answer.push_back(-1);
+            }
         }
 
         reverse(answer.begin(), answer.end());
@@ -91,7 +105,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.processQueries(c, connections, queries);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

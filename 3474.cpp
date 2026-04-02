@@ -15,27 +15,39 @@ public:
         for (int i = 0; i < m; i++)
         {
             if (str1[i] == 'F')
+            {
                 continue;
+            }
 
             for (int j = 0; j < n; j++)
             {
                 if (answer[i + j] == 'E')
+                {
                     answer[i + j] = str2[j];
+                }
                 else if (answer[i + j] != str2[j])
+                {
                     return "";
+                }
             }
         }
 
         // F
         string temp = answer;
         for (auto &&ans : answer)
+        {
             if (ans == 'E')
+            {
                 ans = 'a';
+            }
+        }
 
         for (int i = 0; i < m; i++)
         {
             if (str1[i] == 'T')
+            {
                 continue;
+            }
 
             string sub = answer.substr(i, n);
             if (sub == str2)
@@ -51,7 +63,9 @@ public:
                     }
                 }
                 if (same)
+                {
                     return "";
+                }
             }
         }
 

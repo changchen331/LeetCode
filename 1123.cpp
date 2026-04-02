@@ -31,15 +31,21 @@ private:
     pair<int, TreeNode *> dfs(TreeNode *node)
     {
         if (node == nullptr)
+        {
             return {0, nullptr};
+        }
 
         auto [left_height, left_lca] = dfs(node->left);
         auto [right_height, right_lca] = dfs(node->right);
         if (left_height > right_height)
+        {
             return {left_height + 1, left_lca}; // 左子树更高
+        }
 
         if (left_height < right_height)
+        {
             return {right_height + 1, right_lca}; // 右子树更高
+        }
 
         return {left_height + 1, node}; // 一样高
     }
@@ -92,7 +98,9 @@ int main(int argc, char const *argv[])
             subnodes.push(current->left);
         }
         else
+        {
             cout << ", null";
+        }
 
         if (current->right != nullptr)
         {
@@ -100,7 +108,9 @@ int main(int argc, char const *argv[])
             subnodes.push(current->right);
         }
         else
+        {
             cout << ", null";
+        }
     }
     cout << " ]" << endl;
 

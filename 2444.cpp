@@ -15,11 +15,17 @@ public:
         {
             int num = nums[i];
             if (num == minK)
+            {
                 min_i = i;
+            }
             if (num == maxK)
+            {
                 max_i = i;
+            }
             if (num < minK || num > maxK)
+            {
                 exclude = i;
+            }
             answer += max(min(min_i, max_i) - exclude, 0);
         }
 

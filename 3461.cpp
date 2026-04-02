@@ -10,7 +10,9 @@ public:
         while (count > 2)
         {
             for (int i = 0; i < count - 1; i++)
+            {
                 s[i] = (s[i] + s[i + 1]) % 10;
+            }
             count--;
         }
 

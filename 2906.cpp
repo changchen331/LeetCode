@@ -16,8 +16,12 @@ public:
         vector prefix(m, vector<int>(n, 1));
         int product = 1;
         for (int i = 0; i < m; i++)
+        {
             for (int j = 0; j < n; j++)
+            {
                 product = ((prefix[i][j] = product) * (grid[i][j] % MOD)) % MOD;
+            }
+        }
 
         product = 1;
         for (int i = m - 1; i > -1; i--)
@@ -42,7 +46,9 @@ int main(int argc, char const *argv[])
     for (auto &&ans : answer)
     {
         for (auto &&a : ans)
+        {
             cout << a << " ";
+        }
         cout << endl;
     }
 

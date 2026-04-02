@@ -15,7 +15,9 @@ public:
         for (int i = size - 1; i >= 0; i--)
         {
             if (nums[i] <= 0)
+            {
                 continue;
+            }
 
             if (last != nums[i])
             {

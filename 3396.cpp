@@ -13,7 +13,9 @@ public:
         for (int i = size - 1; i >= 0; i--)
         {
             if (numbers[nums[i]])
+            {
                 return i / 3 + 1;
+            }
 
             numbers[nums[i]] = true;
         }

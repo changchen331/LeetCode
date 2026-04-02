@@ -11,9 +11,13 @@ public:
 
         int total = 0;
         for (auto &&num : nums)
+        {
             total += num;
+        }
         if (total < k)
+        {
             return total;
+        }
 
         answer = total % k;
         return answer;

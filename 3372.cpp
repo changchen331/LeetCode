@@ -20,13 +20,17 @@ private:
     int dfs(int x, int fa, int d, vector<vector<int>> &g, int k)
     {
         if (d > k)
+        {
             return 0;
+        }
 
         int count = 1;
         for (auto &&y : g[x])
         {
             if (y != fa)
+            {
                 count += dfs(y, x, d + 1, g, k);
+            }
         }
 
         return count;
@@ -42,12 +46,16 @@ public:
         {
             vector<vector<int>> g = buildTree(edges2);
             for (int i = 0; i < size2; i++)
+            {
                 max2 = max(max2, dfs(i, -1, 0, g, k - 1));
+            }
         }
 
         vector<vector<int>> g = buildTree(edges1);
         for (int i = 0; i < size1; i++)
+        {
             answer[i] = dfs(i, -1, 0, g, k) + max2;
+        }
 
         return answer;
     }
@@ -62,7 +70,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.maxTargetNodes(edges1, edges2, k);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

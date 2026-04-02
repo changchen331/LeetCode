@@ -18,9 +18,13 @@ public:
                 if (temp & 1)
                 {
                     if (current == 0)
+                    {
                         current = nums[j];
+                    }
                     else
+                    {
                         current ^= nums[j];
+                    }
                 }
                 temp >>= 1;
             }

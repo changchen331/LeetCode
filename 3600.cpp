@@ -24,7 +24,9 @@ public:
     {
         // 如果 fa[x] == x，则表示 x 是代表元
         if (fa[x] != x)
+        {
             fa[x] = find(fa[x]); // fa 改成代表元
+        }
 
         return fa[x];
     }
@@ -35,7 +37,9 @@ public:
     {
         int x = find(from), y = find(to);
         if (x == y)
+        {
             return false; // from 和 to 在同一个集合，不做合并
+        }
 
         fa[x] = y; // 合并集合。修改后就可以认为 from 和 to 在同一个集合了
         cc--;      // 成功合并，连通块个数减一
@@ -53,21 +57,29 @@ private:
         {
             int x = edge[0], y = edge[1], s = edge[2], must = edge[3];
             if (must && s < low)
+            {
                 return false;
+            }
 
             if (must || s >= low)
+            {
                 u.merge(x, y);
+            }
         }
 
         int left_k = k;
         for (auto &&edge : edges)
         {
             if (left_k == 0 || u.cc == 1)
+            {
                 break;
+            }
 
             int x = edge[0], y = edge[1], s = edge[2], must = edge[3];
             if (!must && s < low && s * 2 >= low && u.merge(x, y))
+            {
                 left_k--;
+            }
         }
 
         return u.cc == 1;
@@ -85,7 +97,9 @@ public:
         {
             int x = edge[0], y = edge[1], s = edge[2], must = edge[3];
             if (must && !must_uf.merge(x, y))
+            {
                 return -1;
+            }
 
             all_uf.merge(x, y);
             min_s = min(min_s, s);
@@ -93,16 +107,22 @@ public:
         }
 
         if (all_uf.cc > 1)
+        {
             return -1;
+        }
 
         int left = min_s, right = max_s * 2;
         while (left < right)
         {
             int mid = left + (right - left + 1) / 2;
             if (check(n, edges, k, mid))
+            {
                 left = mid;
+            }
             else
+            {
                 right = mid - 1;
+            }
         }
 
         answer = left;

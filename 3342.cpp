@@ -23,9 +23,13 @@ public:
             pq.pop();
 
             if ((i == size_x - 1) && (j == size_y - 1))
+            {
                 return d;
+            }
             if (d > dis[i][j])
+            {
                 continue;
+            }
 
             int time = (i + j) % 2 + 1;
             for (auto &&q : dirs)
@@ -35,7 +39,9 @@ public:
                 {
                     int new_dis = max(d, moveTime[x][y]) + time;
                     if (new_dis < dis[x][y])
+                    {
                         pq.emplace(dis[x][y] = new_dis, x, y);
+                    }
                 }
             }
         }

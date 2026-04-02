@@ -42,7 +42,9 @@ int main(int argc, char const *argv[])
 
     vector<string> answer = solution.removeAnagrams(words);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

@@ -20,7 +20,9 @@ public:
                 min_1 = arrays[i][0];
             }
             else if (arrays[i][0] < min_2)
+            {
                 min_2 = arrays[i][0];
+            }
 
             // 最大值
             if (arrays[i].back() > max_1)
@@ -30,11 +32,15 @@ public:
                 max_1 = arrays[i].back();
             }
             else if (arrays[i].back() > max_2)
+            {
                 max_2 = arrays[i].back();
+            }
         }
 
         if (min_x == max_x)
+        {
             return (min_2 - min_1) >= (max_1 - max_2) ? (max_2 - min_1) : (max_1 - min_2);
+        }
         return max_1 - min_1;
     }
 };

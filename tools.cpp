@@ -9,7 +9,9 @@ vector<int> POWER_OF_TWO;
 int init = []
 {
     for (int i = 0; i < 31; i++)
+    {
         POWER_OF_TWO.emplace_back(1 << i);
+    }
     return 0;
 }();
 
@@ -18,7 +20,9 @@ struct Comparator
     bool operator()(const pair<int, int> &a, const pair<int, int> &b)
     {
         if (a.first != b.first)
+        {
             return a.first < b.first;
+        }
 
         return a.second < b.second;
     }
@@ -56,10 +60,14 @@ int main(int argc, char const *argv[])
         nodes.pop();
 
         if (position < root.size())
+        {
             nodes.push(node->left = new TreeNode(root[position++]));
+        }
 
         if (position < root.size())
+        {
             nodes.push(node->right = new TreeNode(root[position++]));
+        }
     }
 
     return 0;

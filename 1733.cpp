@@ -11,8 +11,12 @@ public:
 
         vector<vector<bool>> user(u_amount, vector<bool>(n + 1, false));
         for (int i = 0; i < u_amount; i++)
+        {
             for (auto &&l : languages[i])
+            {
                 user[i][l] = true;
+            }
+        }
 
         for (int language = 1; language <= n; language++)
         {

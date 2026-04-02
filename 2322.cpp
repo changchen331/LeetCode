@@ -51,15 +51,23 @@ public:
             {
                 int a, b, c;
                 if (is_ancestor(x, y))
+                {
                     a = xr[y], b = xr[x] ^ a, c = xr[0] ^ xr[x]; // x 是 y 的祖先
+                }
                 else if (is_ancestor(y, x))
+                {
                     a = xr[x], b = xr[y] ^ a, c = xr[0] ^ xr[y]; // y 是 x 的祖先
+                }
                 else
+                {
                     a = xr[x], b = xr[y], c = xr[0] ^ a ^ b; // x 和 y 分别属于两棵不相交的子树
+                }
 
                 ans = min(ans, max({a, b, c}) - min({a, b, c}));
                 if (ans == 0)
+                {
                     return 0; // 不可能变小,提前返回
+                }
             }
         }
         return ans;

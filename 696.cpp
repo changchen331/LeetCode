@@ -15,9 +15,13 @@ public:
             if (s[i] != s[i - 1])
             {
                 if (s[i - 1] == '0')
+                {
                     count0 = count;
+                }
                 else
+                {
                     count1 = count;
+                }
                 count = 1;
 
                 answer += min(count0, count1);

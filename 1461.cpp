@@ -13,7 +13,9 @@ public:
         int total = 1 << k;
         unordered_set<string> strs;
         for (int i = 0; (i <= length - k) && strs.size() < total; i++)
+        {
             strs.insert(s.substr(i, k));
+        }
 
         answer = (strs.size() == total);
         return answer;

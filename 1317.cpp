@@ -9,8 +9,12 @@ private:
     {
         string n_str = to_string(n);
         for (auto &&c : n_str)
+        {
             if (c == '0')
+            {
                 return false;
+            }
+        }
         return true;
     }
 
@@ -21,7 +25,9 @@ public:
         {
             int temp = n - i;
             if (check(i) && check(temp))
+            {
                 return {i, temp};
+            }
         }
         return {};
     }
@@ -34,7 +40,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.getNoZeroIntegers(n);
     for (auto &&ans : answer)
+    {
         cout << ans << (ans != answer.back() ? " " : "\n");
+    }
 
     return 0;
 }

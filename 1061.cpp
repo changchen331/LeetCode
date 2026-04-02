@@ -10,7 +10,9 @@ private:
     int find(vector<int> &fa, int x)
     {
         if (fa[x] != x)
+        {
             fa[x] = find(fa, fa[x]);
+        }
 
         return fa[x];
     }
@@ -29,13 +31,19 @@ public:
 
         vector<int> fa(26);
         for (int i = 0; i < 26; i++)
+        {
             fa[i] = i;
+        }
 
         for (int i = 0; i < size; i++)
+        {
             merge(fa, s1[i] - 'a', s2[i] - 'a');
+        }
 
         for (int i = 0; i < base_size; i++)
+        {
             answer.push_back(find(fa, baseStr[i] - 'a') + 'a');
+        }
 
         return answer;
     }

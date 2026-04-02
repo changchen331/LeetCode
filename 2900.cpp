@@ -13,7 +13,9 @@ public:
         for (int i = 0, current = -1; i < size; i++)
         {
             if (current == groups[i])
+            {
                 continue;
+            }
 
             answer.emplace_back(words[i]);
             current = groups[i];
@@ -31,7 +33,9 @@ int main(int argc, char const *argv[])
 
     vector<string> answer = solution.getLongestSubsequence(words, groups);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
 
     return 0;
 }

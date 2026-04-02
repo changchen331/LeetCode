@@ -16,14 +16,20 @@ public:
         // 我的解法
         // vector<unordered_set<char>> characters(size);
         // for (int i = 0; i < size; i++)
+        // {
         //     for (auto &&c : words[i])
+        //     {
         //         characters[i].insert(c);
+        //     }
+        // }
         // for (int i = 0; i < size - 1; i++)
         // {
         //     for (int j = i + 1; j < size; j++)
         //     {
         //         if (characters[i].size() != characters[j].size())
+        //         {
         //             continue;
+        //         }
         //         bool flag = true;
         //         for (auto &&c : characters[i])
         //         {
@@ -34,7 +40,9 @@ public:
         //             }
         //         }
         //         if (flag)
+        //         {
         //             answer++;
+        //         }
         //     }
         // }
         // return answer;
@@ -45,8 +53,10 @@ public:
         {
             int mark = 0;
             for (auto &&w : word)
+            {
                 // 若 w 为 'e', 则 mark 的第 5 位为 1（10000(二进制) = 16(十进制)）
                 mark |= 1 << (w - 'a');
+            }
             answer += strings[mark]++;
         }
         return answer;

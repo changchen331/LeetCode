@@ -13,7 +13,9 @@ public:
         for (int i = 0; i < size - 1; i++)
         {
             if (derived[i] == 1)
+            {
                 current = 1 - current;
+            }
         }
 
         return (current ^ 1 == derived.back());

@@ -13,7 +13,9 @@ public:
         while (n > 0)
         {
             if (n & 1)
+            {
                 answer[lock]++;
+            }
             lock = !lock;
             n >>= 1;
         }

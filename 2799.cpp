@@ -32,7 +32,9 @@ public:
                 int &numL = nums[left++];
                 count -= --haves[numL] == 0;
                 if (counts[numL] == 0 && haves[numL] == 0)
+                {
                     break;
+                }
             }
         }
 

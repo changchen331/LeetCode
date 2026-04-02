@@ -15,7 +15,9 @@ public:
             for (int y = 0; y < 5; y++)
             {
                 if (y == 5)
+                {
                     continue;
+                }
 
                 vector<int> current(5), previous(5);
                 vector<vector<int>> min_s = {{inf, inf}, {inf, inf}};

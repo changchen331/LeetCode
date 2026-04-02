@@ -13,8 +13,12 @@ public:
         {
             int &num = nums[i];
             for (int j = i + 1; j < size; j++)
+            {
                 if (num == nums[j] && i * j % k == 0)
+                {
                     answer++;
+                }
+            }
         }
 
         return answer;

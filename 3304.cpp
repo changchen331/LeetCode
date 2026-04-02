@@ -12,9 +12,13 @@ int init = []()
         for (int i = 0; i < word.length(); i++)
         {
             if (word[i] == 'z')
+            {
                 temp[i] = 'a';
+            }
             else
+            {
                 temp[i] += 1;
+            }
         }
         word += temp;
     }

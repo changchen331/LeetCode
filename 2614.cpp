@@ -8,15 +8,25 @@ private:
     bool check(int num) // 判断是否为质数
     {
         if (num <= 1)
+        {
             return false;
+        }
         if (num <= 3)
+        {
             return true;
+        }
         if (num % 2 == 0 || num % 3 == 0)
+        {
             return false;
+        }
 
         for (int i = 5; i * i <= num; i += 6)
+        {
             if ((num % i == 0) || (num % (i + 2) == 0))
+            {
                 return false;
+            }
+        }
         return true;
     }
 
@@ -29,11 +39,17 @@ public:
         {
             int num1 = nums[x][x], num2 = nums[x][length - x];
             if (check(num1))
+            {
                 answer = max(answer, num1);
+            }
             if (num1 == num2)
+            {
                 continue;
+            }
             if (check(num2))
+            {
                 answer = max(answer, num2);
+            }
         }
 
         return answer;

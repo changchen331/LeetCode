@@ -11,14 +11,20 @@ public:
 
         vector<int> lefts(size, 1);
         for (int i = 1; i < size; i++)
+        {
             if (ratings[i] > ratings[i - 1])
+            {
                 lefts[i] = lefts[i - 1] + 1;
+            }
+        }
 
         vector<int> rights(size, 1);
         for (int i = size - 2; i >= 0; i--)
         {
             if (ratings[i] > ratings[i + 1])
+            {
                 rights[i] = rights[i + 1] + 1;
+            }
             answer += max(lefts[i], rights[i]);
         }
 

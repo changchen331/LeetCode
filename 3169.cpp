@@ -21,7 +21,9 @@ public:
         for (int i = 0; i < size; i++)
         {
             if (current < meetings[i][0])
+            {
                 answer += meetings[i][0] - current - 1;
+            }
             current = max(current, meetings[i][1]);
         }
 

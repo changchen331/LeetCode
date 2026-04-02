@@ -15,7 +15,9 @@ public:
             if (prices[left] - 1 == prices[right])
             {
                 while (right < size && prices[right] == (prices[right - 1] - 1))
+                {
                     right++;
+                }
                 answer += 1L * (right - left) * (right - left - 1) / 2;
             }
         }

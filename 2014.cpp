@@ -16,10 +16,14 @@ class Solution
         {
             // 如果 path*k 不是 s 的子序列，那么继续往 path 后面添加元素，更不可能是 s 的子序列
             if (!path.empty() && !f(path))
+            {
                 return; // 剪枝
+            }
 
             if (path.size() == n)
+            {
                 return;
+            }
 
             // 枚举 nums[j] 填入 path[i]
             for (int j = 0; j < n; j++)
@@ -27,7 +31,9 @@ class Solution
                 // 如果 nums[j] 已填入排列，continue
                 // 如果 nums[j] 和前一个数 nums[j-1] 相等，且 nums[j-1] 没填入排列，continue
                 if (on_path[j] || j > 0 && nums[j] == nums[j - 1] && !on_path[j - 1])
+                {
                     continue;
+                }
 
                 path += nums[j];    // 填入排列
                 on_path[j] = true;  // nums[j] 已填入排列（注意标记的是下标，不是值）
@@ -61,7 +67,9 @@ public:
                 {
                     i = nxt[i + 1][c - 'a'];
                     if (i == n)
+                    {
                         return false; // c 不在 s 中，说明 seq*k 不是 s 的子序列
+                    }
                 }
             }
             return true;
@@ -69,19 +77,25 @@ public:
 
         int cnt[26]{};
         for (char c : s)
+        {
             cnt[c - 'a']++;
+        }
 
         string a;
         for (int i = 25; i >= 0; i--)
+        {
             a.insert(a.end(), cnt[i] / k, 'a' + i); // 倒序，这样我们可以优先枚举字典序大的排列
+        }
 
         string ans;
         permuteFunc(a, [&](const string &seq)
                     {
-            if (!isSubsequence(seq, k)) 
+            if (!isSubsequence(seq, k)) {
                 return false;
-            if (seq.size() > ans.size() || seq.size() == ans.size() && seq > ans) 
+            }
+            if (seq.size() > ans.size() || seq.size() == ans.size() && seq > ans) {
                 ans = seq;
+            }
             
             return true; });
         return ans;

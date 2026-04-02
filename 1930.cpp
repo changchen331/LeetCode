@@ -13,7 +13,9 @@ public:
         for (int i = 0; i < length - 2; i++)
         {
             if (used[s[i] - 'a'])
+            {
                 continue;
+            }
 
             for (int j = length - 1; j > i + 1; j--)
             {
@@ -21,8 +23,12 @@ public:
                 {
                     vector<bool> met(26, false);
                     for (int k = i + 1; k < j; k++)
+                    {
                         if (!met[s[k] - 'a'])
+                        {
                             answer += met[s[k] - 'a'] = true;
+                        }
+                    }
                     break;
                 }
             }

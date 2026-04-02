@@ -19,16 +19,22 @@ private:
     string gen_expr(TrieNode *node, unordered_map<string, TrieNode *> &expr_to_node)
     {
         if (node->son.empty())
+        {
             return node->name;
+        }
 
         vector<string> expr;
         for (auto &&entry : node->son)
+        {
             expr.push_back("(" + gen_expr(entry.second, expr_to_node) + ")");
+        }
         sort(expr.begin(), expr.end());
 
         string sub_tree_expr;
         for (auto &&e : expr)
+        {
             sub_tree_expr += e;
+        }
 
         if (expr_to_node.find(sub_tree_expr) != expr_to_node.end())
         {
@@ -36,7 +42,9 @@ private:
             node->deleted = true;
         }
         else
+        {
             expr_to_node[sub_tree_expr] = node;
+        }
 
         return node->name + sub_tree_expr;
     }
@@ -44,13 +52,17 @@ private:
     void dfs(TrieNode *node, vector<string> &path)
     {
         if (node->deleted)
+        {
             return;
+        }
 
         path.push_back(node->name);
         answer.push_back(path);
 
         for (auto &entry : node->son)
+        {
             dfs(entry.second, path);
+        }
 
         path.pop_back();
     }
@@ -66,7 +78,9 @@ public:
             for (auto &&s : path)
             {
                 if (cur->son.find(s) == cur->son.end())
+                {
                     cur->son[s] = new TrieNode();
+                }
                 cur = cur->son[s];
                 cur->name = s;
             }
@@ -74,13 +88,17 @@ public:
 
         unordered_map<string, TrieNode *> expr_to_node; // 子树括号表达式 -> 子树根节点
         for (auto &&entry : root->son)
+        {
             gen_expr(entry.second, expr_to_node);
+        }
 
         vector<string> path;
         // 在字典树上回溯，仅访问未被删除的节点，并将路径记录到答案中
         // 类似 257. 二叉树的所有路径
         for (auto &&entry : root->son)
+        {
             dfs(entry.second, path);
+        }
 
         return answer;
     }

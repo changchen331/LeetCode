@@ -12,10 +12,14 @@ public:
 
         unordered_set<int> numbers;
         for (auto &&num : nums)
+        {
             numbers.insert(num);
+        }
 
         while (numbers.find(answer) != numbers.end())
+        {
             answer *= 2;
+        }
 
         return answer;
     }

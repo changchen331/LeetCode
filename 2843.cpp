@@ -14,7 +14,9 @@ public:
             string num_str = to_string(i);
             int length = num_str.length();
             if (length % 2)
+            {
                 continue;
+            }
 
             // 方法 1
             // int left = 0, right = 0;

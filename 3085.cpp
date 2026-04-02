@@ -14,7 +14,9 @@ public:
         for (auto &&c : word)
         {
             if (count[c - 'a'] == 0)
+            {
                 record.push_back(c);
+            }
             count[c - 'a']++;
         }
 
@@ -29,9 +31,13 @@ public:
             {
                 int current = count[record[j] - 'a'];
                 if (current < minFreq)
+                {
                     deletion += current;
+                }
                 else if (current > maxFreq)
+                {
                     deletion += current - maxFreq;
+                }
             }
 
             answer = min(answer, deletion);

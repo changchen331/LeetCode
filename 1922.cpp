@@ -14,7 +14,9 @@ private:
         while (index)
         {
             if (index & 1)
+            {
                 response = response * base % MOD;
+            }
             base = base * base % MOD;
             index >>= 1;
         }
@@ -26,7 +28,9 @@ public:
     int countGoodNumbers(long long n)
     {
         if (n == 1)
+        {
             return 5;
+        }
 
         int answer = 0;
         long long even_5, odd_4;

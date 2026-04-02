@@ -11,7 +11,9 @@ int init = []
         string last = binaries.back();
         string temp = "1";
         for (int j = last.size() - 1; j > -1; j--)
+        {
             temp.push_back(last[j] == '1' ? '0' : '1');
+        }
         binaries.emplace_back(last + temp);
     }
 
@@ -24,7 +26,9 @@ public:
     char findKthBit(int n, int k)
     {
         if (k == 1)
+        {
             return '0';
+        }
 
         return binaries[n - 1][k - 1];
     }

@@ -18,9 +18,13 @@ public:
                 maximum = num;
             }
             else if (num == maximum)
+            {
                 answer = max(answer, ++count);
+            }
             else
+            {
                 count = 0;
+            }
         }
 
         return answer;

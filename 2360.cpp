@@ -13,15 +13,23 @@ public:
         for (int i = 0, current = 1; i < size; i++)
         {
             if (answer >= size / 2)
+            {
                 break;
+            }
             if (edges[i] == -1)
+            {
                 continue;
+            }
 
             int s = i, start = current;
             for (; s != -1 && records[s] == 0; s = edges[s])
+            {
                 records[s] = current++;
+            }
             if (s != -1 && records[s] >= start)
+            {
                 answer = max(answer, current - records[s]);
+            }
         }
 
         return answer;

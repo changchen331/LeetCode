@@ -24,13 +24,17 @@ public:
                     answer = count;
                 }
                 else if (count == maximum)
+                {
                     answer += count;
+                }
 
                 record = current;
                 count = 1;
             }
             else
+            {
                 count++;
+            }
         }
 
         return answer;

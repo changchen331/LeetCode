@@ -12,9 +12,13 @@ public:
         for (int i = 0; i < length; i++)
         {
             if (s[i] == 91)
+            {
                 count++;
+            }
             else if (count > 0)
+            {
                 count--;
+            }
             else
             {
                 answer++;

@@ -14,8 +14,12 @@ private:
 
         int pivot = arr[right], i = left - 1; // 记录小于基准的区域的右边界
         for (int j = left; j < right; j++)
+        {
             if (arr[j] <= pivot)
+            {
                 swap(arr[++i], arr[j]);
+            }
+        }
 
         // 将基准元素放到正确位置
         swap(arr[i + 1], arr[right]);
@@ -50,7 +54,9 @@ int main(int argc, char const *argv[])
 
     solution.sortColors(nums);
     for (auto &&num : nums)
+    {
         cout << num << " ";
+    }
     cout << endl;
 
     return 0;

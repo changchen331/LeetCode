@@ -11,11 +11,17 @@ public:
         int answer = 0, size = arr.size();
 
         for (int i = 0; i < size - 2; i++)
+        {
             for (int j = i + 1; j < size - 1; j++)
+            {
                 for (int k = j + 1; k < size; k++)
+                {
                     answer += abs(arr[i] - arr[j]) <= a &&
                               abs(arr[j] - arr[k]) <= b &&
                               abs(arr[k] - arr[i]) <= c;
+                }
+            }
+        }
 
         return answer;
     }

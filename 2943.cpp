@@ -19,7 +19,9 @@ public:
         for (int i = 1; i <= size_h; i++)
         {
             if (hBars[i] == hBars[i - 1] + 1)
+            {
                 length_h++;
+            }
             else
             {
                 maximum_h = max(maximum_h, length_h);
@@ -32,7 +34,9 @@ public:
         for (int i = 1; i <= size_v; i++)
         {
             if (vBars[i] == vBars[i - 1] + 1)
+            {
                 length_v++;
+            }
             else
             {
                 maximum_v = max(maximum_v, length_v);

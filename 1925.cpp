@@ -9,7 +9,9 @@ int init = []
     square.insert(25);
     square.insert(100);
     for (int i = 13; i <= 250; i++)
+    {
         square.insert(i * i);
+    }
 
     return 0;
 }();
@@ -29,9 +31,13 @@ public:
             {
                 int y = j * j;
                 if (x + y > limitation)
+                {
                     break;
+                }
                 if (square.find(x + y) != square.end())
+                {
                     answer += 1 + (x != y);
+                }
             }
         }
 

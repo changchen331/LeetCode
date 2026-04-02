@@ -72,7 +72,9 @@ int main(int argc, char const *argv[])
             cout << "null" << " ";
         }
         else if (command == "getValue")
+        {
             cout << obj->getValue(value.first) << " ";
+        }
     }
     cout << endl;
 

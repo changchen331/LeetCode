@@ -14,11 +14,15 @@ private:
         long long current = grid[x][y];
 
         if (x == m - 1 && y == n - 1)
+        {
             return {current, current};
+        }
 
         auto &response = memories[x][y];
         if (response.first != LLONG_MIN)
+        {
             return response;
+        }
 
         long long minimum = LLONG_MAX;
         long long maximum = LLONG_MIN;

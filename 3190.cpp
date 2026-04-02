@@ -10,7 +10,9 @@ public:
         int answer = 0, size = nums.size();
 
         for (auto &&num : nums)
+        {
             answer += (num % 3) != 0;
+        }
 
         return answer;
     }

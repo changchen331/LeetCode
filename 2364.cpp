@@ -13,7 +13,9 @@ public:
 
         vector<int> computed_nums(size, 0);
         for (int i = 0; i < size; i++)
+        {
             computed_nums[i] = nums[i] - i;
+        }
         sort(computed_nums.begin(), computed_nums.end());
 
         answer = 1LL * size * (size - 1) / 2;
@@ -28,7 +30,9 @@ public:
                 count = 0;
             }
             else if (current == last)
+            {
                 count++;
+            }
 
             last = current;
         }

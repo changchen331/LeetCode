@@ -10,15 +10,21 @@ private:
     int dfs(vector<vector<int>> &memories, int i, int j)
     {
         if (i + 1 == j)
+        {
             return 0;
+        }
 
         int &response = memories[i][j];
         if (response != -1)
+        {
             return response;
+        }
 
         response = INT_MAX;
         for (int k = i + 1; k < j; k++)
+        {
             response = min(response, dfs(memories, i, k) + dfs(memories, k, j) + points[i] * points[j] * points[k]);
+        }
 
         return response;
     }

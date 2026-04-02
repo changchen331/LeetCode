@@ -11,13 +11,19 @@ private:
         int size = fruits.size();
 
         if (j < size - 1 - i || j >= size)
+        {
             return 0;
+        }
         if (i == 0)
+        {
             return fruits[i][j];
+        }
 
         int &response = memories[i][j];
         if (response != -1)
+        {
             return response;
+        }
         return response = max({dfs(fruits, memories, i - 1, j - 1), dfs(fruits, memories, i - 1, j), dfs(fruits, memories, i - 1, j + 1)}) + fruits[i][j];
     }
 
@@ -39,8 +45,13 @@ public:
 
         // 右上
         for (int i = 0; i < size; i++)
+        {
             for (int j = 0; j < i; j++)
+            {
                 fruits[j][i] = fruits[i][j];
+            }
+        }
+
         fill(memories.begin(), memories.end(), vector<int>(size, -1));
 
         return answer + dfs(fruits, memories, size - 2, size - 1);

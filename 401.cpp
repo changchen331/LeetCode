@@ -28,7 +28,9 @@ int init = []
 
             string tail = "";
             if (m < 10)
+            {
                 tail.push_back('0');
+            }
             tail += to_string(m);
 
             times[countH + countM].push_back(head + tail);
@@ -54,7 +56,9 @@ int main(int argc, char const *argv[])
 
     vector<string> answer = solution.readBinaryWatch(turnedOn);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

@@ -14,12 +14,18 @@ public:
         {
             int &num = nums[i];
             if (num == 2)
+            {
                 continue;
+            }
 
             int position = 1;
             for (int current = 2;; current <<= 1, position++)
+            {
                 if (!(num & current))
+                {
                     break;
+                }
+            }
 
             answer[i] = num - (1 << (position - 1));
         }
@@ -35,7 +41,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.minBitwiseArray(nums);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

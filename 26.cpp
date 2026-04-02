@@ -12,9 +12,13 @@ public:
         for (int i = 1; i < size; i++)
         {
             if (nums[i - 1] == nums[i])
+            {
                 continue;
+            }
             else
+            {
                 nums[position++] = nums[i];
+            }
         }
         return position;
     }
@@ -27,8 +31,11 @@ int main(int argc, char const *argv[])
 
     int answer = solution.removeDuplicates(nums);
     cout << answer << endl;
+
     for (auto &&num : nums)
+    {
         cout << num << " ";
+    }
     cout << endl;
 
     return 0;

@@ -70,9 +70,13 @@ int main(int argc, char const *argv[])
             cout << "null";
         }
         else if (command == "back")
+        {
             cout << "\"" << browserHistory->back(value[0][0] - '0') << "\"";
+        }
         else
+        {
             cout << "\"" << browserHistory->forward(value[0][0] - '0') << "\"";
+        }
         cout << (i < commands.size() - 1 ? " , " : "");
     }
 

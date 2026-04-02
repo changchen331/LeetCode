@@ -9,11 +9,17 @@ private:
     int check(char c)
     {
         if (c > 47 && c < 58)
+        {
             return 0;
+        }
         else if (c > 64 && c < 91)
+        {
             return 1;
+        }
         else if (c > 96 && c < 123)
+        {
             return 2;
+        }
 
         return -1;
     }
@@ -33,7 +39,9 @@ public:
             {
                 int temp = check(s[left]);
                 if (temp == 0 || temp == 1)
+                {
                     break;
+                }
                 else if (temp == 2)
                 {
                     s[left] -= 32;
@@ -45,7 +53,9 @@ public:
             {
                 int temp = check(s[right]);
                 if (temp == 0 || temp == 1)
+                {
                     break;
+                }
                 else if (temp == 2)
                 {
                     s[right] -= 32;
@@ -54,7 +64,9 @@ public:
             }
 
             if (s[left++] != s[right--])
+            {
                 return false;
+            }
         }
 
         return true;

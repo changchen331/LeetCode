@@ -10,8 +10,12 @@ public:
         int answer = 0, size = nums.size();
 
         for (int i = size - 1; i > 0; i--)
+        {
             for (int j = 0; j < i; j++)
+            {
                 nums[j] = (nums[j] + nums[j + 1]) % 10;
+            }
+        }
         answer = nums[0];
 
         return answer;

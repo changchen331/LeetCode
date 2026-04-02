@@ -8,11 +8,15 @@ private:
     long long dfs(vector<vector<int>> &questions, vector<long long> &memories, int position)
     {
         if (position >= questions.size())
+        {
             return 0;
+        }
 
         long long &memory = memories[position];
         if (memory > 0)
+        {
             return memory;
+        }
 
         return memory = max(dfs(questions, memories, position + questions[position][1] + 1) + questions[position][0],
                             dfs(questions, memories, position + 1));

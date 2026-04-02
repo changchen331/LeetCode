@@ -18,22 +18,32 @@ public:
             char c = s[i];
 
             if (last == c)
+            {
                 count++;
+            }
             else if (last != c)
             {
                 if (count % 2 == 1)
+                {
                     odd_max = max(odd_max, count);
+                }
                 else
+                {
                     eve_min = min(eve_min, count);
+                }
                 last = c;
                 count = 1;
             }
         }
 
         if (count % 2 == 1)
+        {
             odd_max = max(odd_max, count);
+        }
         else
+        {
             eve_min = min(eve_min, count);
+        }
         answer = odd_max - eve_min;
         return answer;
     }

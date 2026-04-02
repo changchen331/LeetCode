@@ -35,14 +35,18 @@ private:
     int cul_total(TreeNode *node)
     {
         if (node == nullptr)
+        {
             return 0;
+        }
         return node->val + cul_total(node->left) + cul_total(node->right);
     }
 
     int cul_subt(TreeNode *node)
     {
         if (node == nullptr)
+        {
             return 0;
+        }
 
         int response = node->val + cul_subt(node->left) + cul_subt(node->right);
         answer = max(answer, 1LL * response * (total - response));

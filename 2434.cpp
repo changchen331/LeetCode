@@ -14,7 +14,9 @@ public:
         vector<char> minimum(length + 1);
         minimum[length] = 'z';
         for (int i = length - 1; i >= 0; i--)
+        {
             minimum[i] = min(s[i], minimum[i + 1]);
+        }
 
         stack<char> chars;
         for (int i = 0; i < length; i++)

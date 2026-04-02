@@ -12,13 +12,17 @@ public:
 
         vector<int> computed_nums(size + 1, 0);
         for (int i = 0; i < size; i++)
+        {
             computed_nums[i + 1] = computed_nums[i] + (nums[i] % modulo == k);
+        }
 
         vector<int> counts(min(size + 1, modulo), 0);
         for (auto &&c_n : computed_nums)
         {
             if (c_n >= k)
+            {
                 answer += counts[(c_n - k) % modulo];
+            }
             counts[c_n % modulo]++;
         }
 

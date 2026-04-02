@@ -13,9 +13,13 @@ private:
         int response = start[0];
 
         if (index == start.size())
+        {
             response = event - end.back();
+        }
         else if (index > 0)
+        {
             response = start[index] - end[index - 1];
+        }
 
         return response;
     }
@@ -45,7 +49,9 @@ public:
                 b = i;
             }
             else if (c < 0 || temp > getFree(c))
+            {
                 c = i;
+            }
         }
 
         // 枚举
@@ -56,9 +62,13 @@ public:
             if (i != a && i + 1 != a && time <= getFree(a) ||
                 i != b && i + 1 != b && time <= getFree(b) ||
                 time <= getFree(c))
+            {
                 answer = max(answer, getFree(i) + time + getFree(i + 1));
+            }
             else
+            {
                 answer = max(answer, getFree(i) + getFree(i + 1));
+            }
         }
 
         return answer;

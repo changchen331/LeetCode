@@ -10,7 +10,9 @@ vector<long long> ans[10];
 bool is_k_palindrome(long long num, int k)
 {
     if (num % k == 0)
+    {
         return false;
+    }
 
     int rev = 0; // 翻转数
     while (rev < num / k)
@@ -29,15 +31,23 @@ bool do_palindrome(long long num)
     for (int k = 2; k < 10; k++)
     {
         if (ans[k].size() < MAX_N && is_k_palindrome(num, k))
+        {
             ans[k].push_back(num);
+        }
         if (ans[k].size() < MAX_N)
+        {
             done = false;
+        }
     }
     if (!done)
+    {
         return false;
+    }
 
     for (int k = 2; k < 10; k++)
+    {
         partial_sum(ans[k].begin(), ans[k].end(), ans[k].begin());
+    }
 
     return true;
 }
@@ -51,9 +61,13 @@ auto init = []()
         {
             long long num = i;
             for (int t = i / 10; t > 0; t /= 10)
+            {
                 num = num * 10 + t % 10;
+            }
             if (do_palindrome(num))
+            {
                 return 0;
+            }
         }
 
         // 生成偶数长度回文数
@@ -61,9 +75,13 @@ auto init = []()
         {
             long long num = i;
             for (int t = i; t > 0; t /= 10)
+            {
                 num = num * 10 + t % 10;
+            }
             if (do_palindrome(num))
+            {
                 return 0;
+            }
         }
     }
 }();

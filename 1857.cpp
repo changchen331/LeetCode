@@ -8,7 +8,9 @@ private:
     vector<int> dfs(string &colors, vector<vector<int>> &g, vector<vector<int>> &memories, int x)
     {
         if (!memories[x].empty())
+        {
             return memories[x];
+        }
 
         memories[x] = {0};
         vector<int> response(26);
@@ -16,9 +18,13 @@ private:
         {
             vector<int> cy = dfs(colors, g, memories, y);
             if (cy.size() <= 1)
+            {
                 return cy;
+            }
             for (int i = 0; i < 26; i++)
+            {
                 response[i] = max(response[i], cy[i]);
+            }
         }
 
         response[colors[x] - 'a']++;
@@ -35,7 +41,9 @@ public:
         {
             int x = edge[0], y = edge[1];
             if (x == y)
+            {
                 return -1;
+            }
             g[x].emplace_back(y);
         }
 
@@ -44,7 +52,9 @@ public:
         {
             vector<int> response = dfs(colors, g, memories, x);
             if (response.size() <= 1)
+            {
                 return -1;
+            }
             answer = max(answer, response[colors[x] - 'a']);
         }
 

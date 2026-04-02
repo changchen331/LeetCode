@@ -17,9 +17,13 @@ public:
             left += flower;
         }
         if (left == newFlowers)
+        {
             return 1LL * size * full;
+        }
         if (left >= 0)
+        {
             return max(1LL * size * full, 1LL * (target - 1) * partial + 1LL * (size - 1) * full);
+        }
 
         sort(flowers.begin(), flowers.end());
 
@@ -28,10 +32,14 @@ public:
         {
             left += target - flowers[i - 1];
             if (left < 0)
+            {
                 continue;
+            }
 
             while (j < i && 1LL * flowers[j] * j <= (pre_sum + left))
+            {
                 pre_sum += flowers[j++];
+            }
 
             long long average = (pre_sum + left) / j;
             long long temp = average * partial + 1LL * (size - i) * full;

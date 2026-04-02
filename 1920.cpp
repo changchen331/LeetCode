@@ -11,7 +11,9 @@ public:
         vector<int> answer(size, 0);
 
         for (int i = 0; i < size; i++)
+        {
             answer[i] = nums[nums[i]];
+        }
 
         return answer;
     }
@@ -24,7 +26,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.buildArray(nums);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

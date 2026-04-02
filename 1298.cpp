@@ -17,14 +17,18 @@ private:
         {
             has_key[key] = true;
             if (has_box[key])
+            {
                 dfs(candies, keys, containedBoxes, answer, has_key, has_box, key);
+            }
         }
 
         for (auto &&containedBox : containedBoxes[current])
         {
             has_box[containedBox] = true;
             if (has_key[containedBox])
+            {
                 dfs(candies, keys, containedBoxes, answer, has_key, has_box, containedBox);
+            }
         }
     }
 
@@ -37,11 +41,17 @@ public:
         vector<int> &has_key = status;
         vector<uint8_t> has_box(status.size());
         for (auto &&initialBox : initialBoxes)
+        {
             has_box[initialBox] = true;
+        }
 
         for (auto &&initialBox : initialBoxes)
+        {
             if (has_key[initialBox] && has_box[initialBox])
+            {
                 dfs(candies, keys, containedBoxes, answer, has_key, has_box, initialBox);
+            }
+        }
 
         return answer;
     }

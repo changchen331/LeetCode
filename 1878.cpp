@@ -13,8 +13,12 @@ private:
         int response = 0;
 
         for (int i = 1; i < 3; i++)
+        {
             if (answer[i] < answer[response])
+            {
                 response = i;
+            }
+        }
 
         return response;
     }
@@ -75,8 +79,12 @@ public:
 
         sort(answer.begin(), answer.end(), greater<>());
         for (int i = 2; i > 0; i--)
+        {
             if (answer[i] == 0)
+            {
                 answer.pop_back();
+            }
+        }
 
         return answer;
     }
@@ -90,7 +98,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.getBiggestThree(grid);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

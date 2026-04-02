@@ -40,9 +40,13 @@ public:
             for (int j = 0; j < n; j++)
             {
                 if (row[j] == '0')
+                {
                     heights[j] = 0;
+                }
                 else
+                {
                     heights[j]++;
+                }
             }
             answer = max(answer, largestRectangleArea(heights));
         }

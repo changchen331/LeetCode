@@ -11,9 +11,13 @@ public:
         for (int i = 1, j = 0; i <= n; i++)
         {
             if (i <= k / 2)
+            {
                 answer += i;
+            }
             else
+            {
                 answer += k + j++;
+            }
         }
 
         return answer;

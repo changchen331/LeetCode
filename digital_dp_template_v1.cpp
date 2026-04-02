@@ -11,15 +11,21 @@ private:
     int dfs(string &s, vector<vector<int>> &memories, int i, int mask, bool is_limit, bool is_num)
     {
         if (i == s.length())
+        {
             return is_num;
+        }
         if (!is_limit && is_num && memories[i][mask] != -1)
+        {
             return memories[i][mask]; // 之前计算过
+        }
 
         int response = 0;
 
         if (!is_num)
+        {
             // 选择跳过, 不填数字
             response = dfs(s, memories, i + 1, mask, false, false);
+        }
 
         // 如果前面填的数字都和 n 的一样，那么这一位至多填数字 s[i]（否则就超过 n）
         int limit = is_limit ? (s[i] - '0') : 9;
@@ -27,11 +33,18 @@ private:
         // 枚举要填入的数字 j
         // 如果前面没有填数字，则必须从 1 开始（因为不能有前导零）
         for (int j = 1 - is_num; j < limit + 1; j++)
-            if ((mask & (1 << j)) == 0) // d 不在 mask 中，说明之前没有填过 d
+        {
+            if ((mask & (1 << j)) == 0)
+            {
+                // d 不在 mask 中，说明之前没有填过 d
                 response += dfs(s, memories, i + 1, mask | (1 << j), is_limit && j == limit, true);
+            }
+        }
 
         if (!is_limit && is_num)
+        {
             memories[i][mask] = response;
+        }
 
         return response;
     }

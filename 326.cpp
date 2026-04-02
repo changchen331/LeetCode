@@ -8,7 +8,9 @@ unordered_set<int> POWER_OF_THREE;
 int init = []
 {
     for (int i = 0; i < 20; i++)
+    {
         POWER_OF_THREE.insert(pow(3, i));
+    }
     return 0;
 }();
 
@@ -20,7 +22,9 @@ public:
         bool answer = false;
 
         if (POWER_OF_THREE.find(n) != POWER_OF_THREE.end())
+        {
             answer = true;
+        }
 
         return answer;
     }

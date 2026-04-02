@@ -14,7 +14,9 @@ public:
         {
             int count = 0;
             for (auto &&t : mat[i])
+            {
                 count += t;
+            }
             if (count > answer[1])
             {
                 answer[0] = i;
@@ -33,7 +35,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.rowAndMaximumOnes(mat);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

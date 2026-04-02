@@ -13,12 +13,18 @@ public:
         for (auto &&num : nums)
         {
             if (num < k)
+            {
                 return -1;
+            }
             if (num == k)
+            {
                 continue;
+            }
 
             if (!count[num])
+            {
                 answer += count[num] = true;
+            }
         }
 
         return answer;

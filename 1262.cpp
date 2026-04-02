@@ -11,9 +11,13 @@ public:
         int answer = 0, size = nums.size();
 
         for (auto &&num : nums)
+        {
             answer += num;
+        }
         if (answer % 3 == 0)
+        {
             return answer;
+        }
 
         int one1 = 10'000, one2 = 10'000;
         int two1 = 10'000, two2 = 10'000;
@@ -27,7 +31,9 @@ public:
                     one1 = num;
                 }
                 else if (num < one2)
+                {
                     one2 = num;
+                }
             }
             else if (num % 3 == 2)
             {
@@ -37,15 +43,21 @@ public:
                     two1 = num;
                 }
                 else if (num < two2)
+                {
                     two2 = num;
+                }
             }
         }
 
         int loss1 = min(one1, two1 + two2), loss2 = min(one1 + one2, two1);
         if (answer % 3 == 1)
+        {
             answer -= loss1;
+        }
         else if (answer % 3 == 2)
+        {
             answer -= loss2;
+        }
 
         return answer;
     }

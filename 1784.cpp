@@ -13,12 +13,16 @@ public:
         for (int i = 0; i < length; i++)
         {
             if (count > 0)
+            {
                 return false;
+            }
 
             if (s[i] == '1')
             {
                 while (s[i + 1] == '1')
+                {
                     i++;
+                }
                 count++;
             }
         }

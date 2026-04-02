@@ -18,13 +18,23 @@ public:
 
         vector<vector<int>> sum(m + 1, vector<int>(n + 1, 0));
         for (int i = 0; i < m; i++)
+        {
             for (int j = 0; j < n; j++)
+            {
                 sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + mat[i][j];
+            }
+        }
 
         for (int i = 0; i < m; i++)
+        {
             for (int j = 0; j < n; j++)
+            {
                 while (i + answer < m && j + answer < n && mat_sum(sum, i, j, i + answer, j + answer) <= threshold)
+                {
                     answer++;
+                }
+            }
+        }
 
         return answer;
     }

@@ -16,8 +16,12 @@ public:
         map<int, int> pairs;
         int max = 0;
         for (auto &&item : items)
+        {
             if (item[1] > max)
+            {
                 pairs[item[0]] = max = item[1];
+            }
+        }
 
         for (auto &&query : queries)
         {
@@ -25,7 +29,9 @@ public:
             for (auto &&pair : pairs)
             {
                 if (pair.first > query)
+                {
                     break;
+                }
                 maximum = pair.second;
             }
             answer.push_back(maximum);
@@ -43,7 +49,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.maximumBeauty(items, queries);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

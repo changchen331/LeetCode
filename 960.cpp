@@ -9,8 +9,12 @@ private:
     bool less_eq(vector<string> &strs, int i, int j)
     {
         for (auto &&str : strs)
+        {
             if (str[j] > str[i])
+            {
                 return false;
+            }
+        }
         return true;
     }
 
@@ -23,8 +27,13 @@ public:
         for (int i = 0; i < length; i++)
         {
             for (int j = 0; j < i; j++)
+            {
                 if (f[j] > f[i] && less_eq(strs, i, j))
+                {
                     f[i] = f[j];
+                }
+            }
+
             f[i]++;
         }
 

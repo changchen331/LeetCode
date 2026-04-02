@@ -8,7 +8,9 @@ public:
     string fractionToDecimal(int numerator, int denominator)
     {
         if (numerator == 0)
+        {
             return "0";
+        }
         string answer = "";
 
         string minus, integer, decimal;

@@ -40,9 +40,13 @@ public:
             while (left < right)
             {
                 if (nums[left] + nums[right] > current)
+                {
                     answer += right-- - left;
+                }
                 else
+                {
                     left++;
+                }
             }
         }
 

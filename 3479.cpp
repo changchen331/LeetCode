@@ -31,10 +31,14 @@ private:
     int bit_width(size_t x)
     {
         if (x == 0)
+        {
             return 0; // 0 的位数是 0
+        }
         int width = 0;
         while (x >>= 1)
-            width++;      // 右移直到 x == 0
+        {
+            width++; // 右移直到 x == 0
+        }
         return width + 1; // 最高位 +1
     }
 
@@ -50,7 +54,9 @@ public:
     int findFirstAndUpdate(int o, int l, int r, int x)
     {
         if (mx[o] < x)
+        {
             return -1; // 区间没有 >= x 的数
+        }
         if (l == r)
         {
             mx[o] = -1; // 更新为 -1，表示不能放水果
@@ -58,9 +64,12 @@ public:
         }
 
         int m = (l + r) / 2;
-        int i = findFirstAndUpdate(o * 2, l, m, x);         // 先递归左子树
-        if (i < 0)                                          // 左子树没找到
-            i = findFirstAndUpdate(o * 2 + 1, m + 1, r, x); // 再递归右子树
+        int i = findFirstAndUpdate(o * 2, l, m, x); // 先递归左子树
+        if (i < 0)
+        {
+            // 左子树没找到，再递归右子树
+            i = findFirstAndUpdate(o * 2 + 1, m + 1, r, x);
+        }
         maintain(o);
         return i;
     }
@@ -80,21 +89,33 @@ public:
 
         //     int position = 0;
         //     for (; position < baskets.size(); position++)
+        //     {
         //         if (current <= baskets[position])
+        //         {
         //             break;
+        //         }
+        //     }
 
         //     if (position < baskets.size())
+        //     {
         //         // baskets.erase(baskets.begin() + position);
         //         baskets[position] = 0;
+        //     }
         //     else
+        //     {
         //         answer++;
+        //     }
         // }
 
         // 官解
         SegmentTree t(baskets);
         for (int x : fruits)
+        {
             if (t.findFirstAndUpdate(1, 0, size - 1, x) < 0)
+            {
                 answer++;
+            }
+        }
 
         return answer;
     }

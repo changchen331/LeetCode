@@ -15,13 +15,21 @@ public:
         // 偶数位
         vector<string> odds(size / 10, "");
         for (int i = 0; i < size / 10; i++)
+        {
             for (int j = 0; j < length; j += 2)
+            {
                 odds[i].append(to_string((s[j] - '0' + i * a) % 10));
+            }
+        }
         // 奇数位
         vector<string> evens(10, "");
         for (int i = 0; i < 10; i++)
+        {
             for (int j = 1; j < length; j += 2)
+            {
                 evens[i].append(to_string((s[j] - '0' + i * a) % 10));
+            }
+        }
         // 合并偶数奇数位
         vector<string> memories(size, "");
         for (int i = 0; i < size; i++)
@@ -41,7 +49,9 @@ public:
             for (auto &&memory : memories)
             {
                 for (int j = 0; j < length; j++)
+                {
                     temp[(j + i * b) % length] = memory[j];
+                }
                 answer = min(answer, temp);
             }
         }

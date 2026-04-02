@@ -62,7 +62,9 @@ int main(int argc, char const *argv[])
         string command = commands[i];
         vector<vector<string>> value = values[i];
         if (command == "highestRated")
+        {
             cout << "\"" << food_ratings->highestRated(value[0][0]) << "\"";
+        }
         else if (command == "changeRating")
         {
             food_ratings->changeRating(value[0][0], stoi(value[0][1]));
@@ -72,7 +74,9 @@ int main(int argc, char const *argv[])
         {
             vector<int> ratings;
             for (auto &&rating : value[2])
+            {
                 ratings.emplace_back(stoi(rating));
+            }
             food_ratings = new FoodRatings(value[0], value[1], ratings);
             cout << "null";
         }

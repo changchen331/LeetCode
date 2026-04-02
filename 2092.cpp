@@ -23,8 +23,12 @@ private:
         vis.insert(x);
         has_secret.insert(x);
         for (int y : g[x])
+        {
             if (vis.find(y) == vis.end())
+            {
                 dfs(vis, g, y);
+            }
+        }
     }
 
 public:
@@ -49,8 +53,12 @@ public:
 
             unordered_set<int> vis;
             for (auto &&[x, _] : g)
+            {
                 if (has_secret.find(x) != has_secret.end() && vis.find(x) == vis.end())
+                {
                     dfs(vis, g, x);
+                }
+            }
         }
 
         answer = vector(has_secret.begin(), has_secret.end());
@@ -67,7 +75,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.findAllPeople(n, meetings, firstPerson);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

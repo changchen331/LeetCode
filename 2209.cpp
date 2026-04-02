@@ -13,8 +13,12 @@ private:
     void dfs(string &floor, int white_num, int position, int currentCarpet, int numCarpets, int carpetLen)
     {
         for (int i = 0; i < carpetLen && position < size && white_num > 0; i++)
+        {
             if (floor[position++] == '1')
+            {
                 white_num--;
+            }
+        }
         if (++currentCarpet == numCarpets || position == size || white_num == 0)
         {
             answer = min(answer, white_num);
@@ -22,20 +26,28 @@ private:
         }
 
         for (int i = position; i < size; i++)
+        {
             dfs(floor, white_num, i, currentCarpet, numCarpets, carpetLen);
+        }
     }
 
     int DFS(string &floor, int x, int y, int carpetLen)
     {
         if (y < x * carpetLen)
+        {
             return 0;
+        }
 
         int &current = memory[x][y];
         if (current != -1)
+        {
             return current;
+        }
 
         if (x == 0)
+        {
             return current = DFS(floor, x, y - 1, carpetLen) + (floor[y] - '0');
+        }
         return current = min(DFS(floor, x, y - 1, carpetLen) + (floor[y] - '0'), DFS(floor, x - 1, y - carpetLen, carpetLen));
     }
 
@@ -47,12 +59,20 @@ public:
         // 我的方法（超时）
         // int white_num = 0;
         // for (int i = 0; i < size; i++)
+        // {
         //     if (floor[i] == '1')
+        //     {
         //         white_num++;
+        //     }
+        // }
         // if (white_num == 0)
+        // {
         //     return 0;
+        // }
         // for (int i = 0; i < size; i++)
+        // {
         //     dfs(floor, white_num, i, 0, numCarpets, carpetLen);
+        // }
         // return answer;
 
         // 官解

@@ -23,19 +23,27 @@ public:
 
             sum_f += f[i];
             while (!min_q.empty() && num <= nums[min_q.back()])
+            {
                 min_q.pop_back();
+            }
             min_q.push_back(i);
             while (!max_q.empty() && num >= nums[max_q.back()])
+            {
                 max_q.pop_back();
+            }
             max_q.push_back(i);
 
             while (nums[max_q.front()] - nums[min_q.front()] > k)
             {
                 sum_f -= f[left++];
                 if (min_q.front() < left)
+                {
                     min_q.pop_front();
+                }
                 if (max_q.front() < left)
+                {
                     max_q.pop_front();
+                }
             }
 
             f[i + 1] = sum_f % MOD;

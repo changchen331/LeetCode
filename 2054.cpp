@@ -37,7 +37,9 @@ public:
             answer = max(answer, it->second + value);
 
             if (value > st.back().second)
+            {
                 st.emplace_back(event[1], value);
+            }
         }
 
         return answer;

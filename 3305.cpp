@@ -17,9 +17,13 @@ private:
         {
             char character = word[right];
             if (aeiou.find(character) != string::npos)
+            {
                 memories[character]++;
+            }
             else
+            {
                 count++;
+            }
 
             while (memories.size() == 5 && count >= least)
             {
@@ -27,10 +31,14 @@ private:
                 if (aeiou.find(start) != string::npos)
                 {
                     if (--memories[start] == 0)
+                    {
                         memories.erase(start);
+                    }
                 }
                 else
+                {
                     count--;
+                }
             }
             response += left;
         }

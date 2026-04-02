@@ -21,9 +21,13 @@ public:
                 {
                     a[j] += mat[bottom][j];
                     if (a[j] != h)
+                    {
                         last = j;
+                    }
                     else
+                    {
                         answer += j - last;
+                    }
                 }
             }
         }

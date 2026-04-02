@@ -15,7 +15,9 @@ public:
         {
             char c = s[i];
             if (!meet0 && c == '0')
+            {
                 meet0 = true;
+            }
             else if (meet0 && c == '1')
             {
                 position = i;
@@ -30,7 +32,9 @@ public:
             if (c == '0')
             {
                 if (!meet0)
+                {
                     meet0 = true;
+                }
                 continue;
             }
             else if (c == '1')

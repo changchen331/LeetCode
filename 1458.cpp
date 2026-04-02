@@ -10,9 +10,13 @@ private:
     int dfs(vector<int> &nums1, vector<int> &nums2, int x, int y)
     {
         if (x < 0 || y < 0)
+        {
             return INT_MIN;
+        }
         if (memories[x][y] != INT_MIN)
+        {
             return memories[x][y];
+        }
 
         int response = INT_MIN;
 

@@ -13,14 +13,20 @@ public:
 
         // 我的解法
         // for (auto &&num : nums)
+        // {
         //     numbers[num]++;
+        // }
         // for (auto &&number : numbers)
+        // {
         //     answer += (number.second - 1) * number.second / 2;
+        // }
         // return answer;
 
         // 官解
         for (auto &&num : nums)
+        {
             answer += numbers[num]++;
+        }
         return answer;
     }
 };

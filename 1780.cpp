@@ -7,7 +7,9 @@ vector<int> POWER_OF_THREE(15);
 int init = []
 {
     for (int i = 0; i < 15; i++)
+    {
         POWER_OF_THREE[i] = pow(3, i);
+    }
     return 0;
 }();
 
@@ -17,11 +19,17 @@ private:
     bool dfs(int n, int current, int index)
     {
         if (current == n)
+        {
             return true;
+        }
         if (current > n)
+        {
             return false;
+        }
         if (index == 15)
+        {
             return false;
+        }
 
         return dfs(n, current, index + 1) ||
                dfs(n, current + POWER_OF_THREE[index], index + 1);

@@ -23,7 +23,9 @@ private:
                 if (Grid[i][j])
                 {
                     if (!hasOne)
+                    {
                         hasOne = true;
+                    }
 
                     x_min = min(x_min, i);
                     x_max = max(x_max, i);
@@ -112,8 +114,12 @@ private:
         vector<vector<int>> response(n, vector<int>(m));
 
         for (int i = 0; i < m; i++)
+        {
             for (int j = 0; j < n; j++)
+            {
                 response[j][m - 1 - i] = Grid[i][j];
+            }
+        }
 
         int temp = m;
         m = n;

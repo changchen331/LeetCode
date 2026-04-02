@@ -13,7 +13,9 @@ public:
         {
             int maximum = 0;
             for (auto &&event : events)
+            {
                 maximum = max(maximum, event[2]);
+            }
             return maximum;
         }
 
@@ -27,7 +29,9 @@ public:
                     events.begin();
 
             for (int j = 1; j <= k; j++)
+            {
                 memories[i + 1][j] = max(memories[i][j], memories[p][j - 1] + events[i][2]);
+            }
         }
 
         return memories[size][k];

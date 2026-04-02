@@ -22,7 +22,9 @@ public:
 
         set<int> idx; // 剩余下标
         for (int i = 0; i < size; i++)
+        {
             idx.insert(i);
+        }
 
         vector<long long> a(nums.begin(), nums.end());
         while (dec > 0)

@@ -17,7 +17,9 @@ public:
     void update(int i, T val)
     {
         for (; i < tree.size(); i += i & -i)
+        {
             tree[i] += val;
+        }
     }
 
     // 求前缀和 a[1] + ... + a[i]
@@ -26,7 +28,9 @@ public:
     {
         T res = 0;
         for (; i > 0; i &= i - 1)
+        {
             res += tree[i];
+        }
         return res;
     }
 };
@@ -39,7 +43,9 @@ public:
         int n = nums1.size();
         vector<int> p(n);
         for (int i = 0; i < n; i++)
+        {
             p[nums1[i]] = i;
+        }
 
         long long ans = 0;
         FenwickTree<int> t(n);

@@ -33,9 +33,13 @@ public:
             {
                 int mid = left + (right - left) / 2;
                 if ((1L * spell * potions[mid]) < success)
+                {
                     left = mid + 1;
+                }
                 else
+                {
                     right = mid - 1;
+                }
             }
             right++;
             answer[i] = right < size_potions ? (size_potions - right) : 0;
@@ -54,7 +58,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.successfulPairs(spells, potions, success);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

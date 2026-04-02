@@ -8,7 +8,9 @@ public:
     {
         int answer = 0;
         if (n == 0)
+        {
             return 1;
+        }
 
         string s = "";
         int temp = n;

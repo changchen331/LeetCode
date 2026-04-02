@@ -11,12 +11,18 @@ public:
         vector<string> answer((length - 1) / k + 1);
 
         for (int i = 0; i < length; i++)
+        {
             answer[i / k].push_back(s[i]);
+        }
 
         int temp = answer.back().length();
         if (temp < k)
+        {
             for (; temp < k; temp++)
+            {
                 answer.back().push_back(fill);
+            }
+        }
 
         return answer;
     }
@@ -31,7 +37,9 @@ int main(int argc, char const *argv[])
 
     vector<string> answer = solution.divideString(s, k, fill);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

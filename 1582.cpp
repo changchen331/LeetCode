@@ -26,13 +26,17 @@ public:
                 }
             }
             if (skip || one == -1)
+            {
                 continue;
+            }
 
             bool add = true;
             for (int k = 0; k < m; k++)
             {
                 if (k == i)
+                {
                     continue;
+                }
 
                 if (mat[k][one] == 1)
                 {

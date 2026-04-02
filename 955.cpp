@@ -23,8 +23,12 @@ public:
                 }
             }
             if (!deleted)
+            {
                 for (int j = 0; j < size; j++)
+                {
                     temp[j] += strs[j][i];
+                }
+            }
         }
 
         return answer;

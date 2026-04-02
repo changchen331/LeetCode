@@ -17,7 +17,9 @@ public:
             if (count < k)
             {
                 if (tail == size)
+                {
                     break;
+                }
                 count += numbers[nums[tail++]]++;
             }
             if (count >= k)

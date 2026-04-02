@@ -14,8 +14,12 @@ public:
             int count = 0;
 
             for (int position = 0; (1 << position) <= i; position++)
+            {
                 if (i & (1 << position))
+                {
                     count |= nums[position];
+                }
+            }
 
             if (count > maximum)
             {

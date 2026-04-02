@@ -42,16 +42,24 @@ class Solution
             if (turn == 0)
             { // 当前轮到鼠移动
                 for (int pre_cat : g_cat[cat])
+                {
                     // 上一轮猫的位置
                     if (winner[mouse][pre_cat][1] == 0)
+                    {
                         pre_states.emplace_back(mouse, pre_cat);
+                    }
+                }
             }
             else
             { // 当前轮到猫移动
                 for (int pre_mouse : g_mouse[mouse])
+                {
                     // 上一轮鼠的位置
                     if (winner[pre_mouse][cat][0] == 0)
+                    {
                         pre_states.emplace_back(pre_mouse, cat);
+                    }
+                }
             }
             return pre_states;
         };
@@ -93,7 +101,9 @@ public:
             for (int j = 0; j < n; j++)
             {
                 if (grid[i][j] == '#')
+                {
                     continue; // 墙
+                }
                 if (grid[i][j] == 'M')
                 { // 鼠的位置
                     mx = i;
@@ -117,16 +127,20 @@ public:
                     { // 枚举跳跃长度
                         int x = i + k * dx, y = j + k * dy;
                         if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] == '#')
+                        {
                             // 出界或者遇到墙
                             break;
+                        }
                         g_mouse[v].push_back(x * n + y); // 连边
                     }
                     for (int k = 0; k <= catJump; k++)
                     { // 枚举跳跃长度
                         int x = i + k * dx, y = j + k * dy;
                         if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] == '#')
+                        {
                             // 出界或者遇到墙
                             break;
+                        }
                         g_cat[v].push_back(x * n + y); // 连边
                     }
                 }

@@ -25,16 +25,24 @@ private:
     {
         cnt[d]++;
         for (auto &&y : g[x])
+        {
             if (y != fa)
+            {
                 dfs(g, cnt, y, x, d ^ 1);
+            }
+        }
     }
 
     void dfs2(vector<int> &answer, array<int, 2> &cnt, vector<vector<int>> &g, int x, int fa, int d)
     {
         answer[x] += cnt[d];
         for (auto &&y : g[x])
+        {
             if (y != fa)
+            {
                 dfs2(answer, cnt, g, y, x, d ^ 1);
+            }
+        }
     }
 
 public:
@@ -59,7 +67,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.maxTargetNodes(edges1, edges2);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

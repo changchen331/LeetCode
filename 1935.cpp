@@ -13,7 +13,9 @@ public:
 
         unordered_set<char> letter;
         for (auto &&brokenLetter : brokenLetters)
+        {
             letter.insert(brokenLetter);
+        }
 
         for (int current = 0; current <= length; current++)
         {
@@ -21,10 +23,14 @@ public:
             if (letter.find(c) != letter.end())
             {
                 while (current <= length && text[current] != ' ')
+                {
                     current++;
+                }
             }
             else if (c == ' ' || current == length)
+            {
                 answer++;
+            }
         }
 
         return answer;

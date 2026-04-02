@@ -20,14 +20,18 @@ public:
             for (auto &&x : temp)
             {
                 if (x == size * size)
+                {
                     return step;
+                }
 
                 for (int y = x + 1; y <= min(x + 6, size * size); y++)
                 {
                     int r = (y - 1) / size, c = (y - 1) % size;
 
                     if (r % 2)
+                    {
                         c = size - 1 - c;
+                    }
 
                     int nxt = board[size - 1 - r][c];
                     if (nxt < 0)

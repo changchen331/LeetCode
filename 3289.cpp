@@ -14,9 +14,13 @@ public:
         for (auto &&num : nums)
         {
             if (database.find(num) != database.end())
+            {
                 answer.emplace_back(num);
+            }
             if (answer.size() == 2)
+            {
                 break;
+            }
             database.insert(num);
         }
 

@@ -44,7 +44,9 @@ public:
     {
         int response = -1;
         if (p_t.size() == 0)
+        {
             return response;
+        }
 
         pair<int, int> temp = *p_t.rbegin();
         response = t_p_u[temp.second].second;
@@ -93,7 +95,9 @@ int main(int argc, char const *argv[])
             cout << "null" << " ";
         }
         else
+        {
             cout << obj->execTop() << " ";
+        }
     }
     cout << endl;
 

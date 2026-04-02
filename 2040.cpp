@@ -21,7 +21,9 @@ private:
             while (i < i0 && j < size2)
             {
                 if ((1LL * nums1[i] * nums2[j]) > mx)
+                {
                     j++;
+                }
                 else
                 {
                     count += size2 - j;
@@ -35,7 +37,9 @@ private:
             while (i < size1 && j < j0)
             {
                 if ((1LL * nums1[i] * nums2[j]) > mx)
+                {
                     i++;
+                }
                 else
                 {
                     count += size1 - i;
@@ -53,7 +57,9 @@ private:
             while (i < i0 && j >= 0)
             {
                 if ((1LL * nums1[i] * nums2[j]) > mx)
+                {
                     i++;
+                }
                 else
                 {
                     count += i0 - i;
@@ -67,7 +73,9 @@ private:
             while (i < size1 && j >= j0)
             {
                 if ((1LL * nums1[i] * nums2[j]) > mx)
+                {
                     j--;
+                }
                 else
                 {
                     count += j - j0 + 1;

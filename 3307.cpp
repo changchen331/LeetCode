@@ -14,16 +14,22 @@ public:
         // for (int i = 0; i < size - 1; i++)
         // {
         //     if (operations[i] == 0)
+        //     {
         //         str += str;
+        //     }
         //     else
         //     {
         //         string temp = str;
         //         for (int j = 0; j < str.length(); j++)
         //         {
         //             if (str[j] == 'z')
+        //             {
         //                 temp[j] = 'a';
+        //             }
         //             else
+        //             {
         //                 temp[j] += 1;
+        //             }
         //         }
         //         str += temp;
         //     }
@@ -36,15 +42,21 @@ public:
         // else
         // {
         //     if (operations.back() == 0)
+        //     {
         //         return str[position % length];
+        //     }
         //     else
+        //     {
         //         return str[position % length] == 'z' ? 'a' : str[position % length] + 1;
+        //     }
         // }
 
         // 法二
         long long m = 0;
         while ((1LL << m) < k)
+        {
             m++;
+        }
 
         long long position = k;
         int count = 0;

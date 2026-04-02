@@ -12,28 +12,43 @@ public:
 
         long long total = 0;
         for (auto &&gr : grid)
+        {
             for (auto &&g : gr)
+            {
                 total += g;
+            }
+        }
+
         if (total % 2)
+        {
             return false;
+        }
         total /= 2;
 
         long long left = 0;
         for (int j = 0; j < n; j++)
         {
             for (int i = 0; i < m; i++)
+            {
                 left += grid[i][j];
+            }
             if (left == total)
+            {
                 return true;
+            }
         }
 
         long long top = 0;
         for (int i = 0; i < m; i++)
         {
             for (int j = 0; j < n; j++)
+            {
                 top += grid[i][j];
+            }
             if (top == total)
+            {
                 return true;
+            }
         }
 
         return answer;

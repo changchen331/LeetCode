@@ -11,9 +11,13 @@ private:
         bool operator()(const vector<string> &a, const vector<string> &b)
         {
             if (a[1] != b[1])
+            {
                 return stoi(a[1]) < stoi(b[1]);
+            }
             else
+            {
                 return a[0] > b[0];
+            }
         }
     };
 
@@ -34,16 +38,24 @@ public:
             if (type == "MESSAGE")
             {
                 if (members == "ALL")
+                {
                     for (auto &&ans : answer)
+                    {
                         ans++;
+                    }
+                }
                 else if (members == "HERE")
+                {
                     for (int j = 0; j < numberOfUsers; j++)
                     {
                         int &sta = status[j];
                         if (sta > 0 && sta <= time)
+                        {
                             sta = 0;
+                        }
                         answer[j] += (sta == 0);
                     }
+                }
                 else
                 {
                     vector<int> ids;
@@ -52,7 +64,9 @@ public:
                     for (auto &&c : members)
                     {
                         if (isdigit(c))
+                        {
                             temp += c;
+                        }
                         else if (!temp.empty())
                         {
                             ids.emplace_back(stoi(temp));
@@ -60,11 +74,15 @@ public:
                         }
                     }
                     for (auto &&id : ids)
+                    {
                         answer[id]++;
+                    }
                 }
             }
             else
+            {
                 status[stoi(members)] = time + 60;
+            }
         }
 
         return answer;
@@ -79,7 +97,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.countMentions(numberOfUsers, events);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

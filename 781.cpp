@@ -16,7 +16,9 @@ public:
             int &ans = answers[i];
 
             if (ans != answers[i - 1])
+            {
                 skip = 0;
+            }
             if (skip > 0)
             {
                 skip--;

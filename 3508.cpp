@@ -71,14 +71,20 @@ public:
     //     {
     //         sources.push(index);
     //         if (packet.size() == 0)
+    //         {
     //             destinations[destination].push_back(source);
+    //         }
     //         packets[index].push_back(timestamp);
 
     //         if (sources.size() > memory_limit)
+    //         {
     //             forwardPacket();
+    //         }
     //     }
     //     else
+    //     {
     //         response = false;
+    //     }
     //     return response;
     // }
 
@@ -109,10 +115,14 @@ public:
     //     for (auto &&s : d_s)
     //     {
     //         if (s == -1)
+    //         {
     //             continue;
+    //         }
     //         vector<int> &time = packets[{s, destination}];
     //         for (auto &&t : time)
+    //         {
     //             response += ((startTime <= t) && (t <= endTime));
+    //         }
     //     }
     //     return response;
     // }
@@ -122,10 +132,14 @@ public:
     {
         auto packet = tuple(source, destination, timestamp);
         if (!packet_set.insert(packet).second)
+        {
             return false; // packet 在 packet_set 中
+        }
 
         if (packet_q.size() == memory_limit)
+        {
             forwardPacket(); // 太多了
+        }
 
         packet_q.push(packet); // 入队
         dest_to_timestamps[destination].push_back(timestamp);
@@ -135,7 +149,9 @@ public:
     vector<int> forwardPacket()
     {
         if (packet_q.empty())
+        {
             return {};
+        }
 
         auto packet = packet_q.front(); // 出队
         packet_q.pop();
@@ -192,7 +208,9 @@ int main(int argc, char const *argv[])
             cout << "[" << temp[0] << ", " << temp[1] << ", " << temp[2] << "] ";
         }
         else if (command == "getCount")
+        {
             cout << obj->getCount(value[0], value[1], value[2]) << " ";
+        }
     }
     cout << endl;
 

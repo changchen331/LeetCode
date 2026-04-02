@@ -17,7 +17,9 @@ private:
         }
 
         for (int i = 1; i <= maxPts; i++)
+        {
             dfs(current + i, n, k, maxPts);
+        }
     }
 
 public:
@@ -37,7 +39,9 @@ public:
             dp[i] = i >= k ? 1 : s / maxPts;
             s += dp[i];
             if (i + maxPts <= n)
+            {
                 s -= dp[i + maxPts];
+            }
         }
         answer = dp[0];
 

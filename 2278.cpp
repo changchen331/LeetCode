@@ -9,7 +9,9 @@ public:
         int answer = 0, length = s.length();
 
         for (auto &&character : s)
+        {
             answer += character == letter;
+        }
 
         return answer * 100 / length;
     }

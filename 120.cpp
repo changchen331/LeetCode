@@ -13,7 +13,9 @@ public:
         {
             vector<int> &temp = triangle[i];
             for (int j = 0; j < temp.size(); j++)
+            {
                 temp[j] += min(triangle[i + 1][j], triangle[i + 1][j + 1]);
+            }
         }
 
         return triangle[0][0];

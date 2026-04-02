@@ -14,18 +14,24 @@ public:
         for (int i = 0; i < size1; i++)
         {
             if (!flag1 && nums1[i] == 0)
+            {
                 flag1 = true;
+            }
             sum1 += max(nums1[i], 1);
         }
         for (int i = 0; i < size2; i++)
         {
             if (!flag2 && nums2[i] == 0)
+            {
                 flag2 = true;
+            }
             sum2 += max(nums2[i], 1);
         }
 
         if ((sum1 < sum2 && !flag1) || (sum1 > sum2 && !flag2))
+        {
             return -1;
+        }
         return max(sum1, sum2);
     }
 };

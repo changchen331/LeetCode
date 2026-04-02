@@ -15,7 +15,9 @@ long long pow(long long x, int n)
     for (; n; n /= 2)
     {
         if (n % 2)
+        {
             res = res * x % MOD;
+        }
         x = x * x % MOD;
     }
     return res;
@@ -25,11 +27,15 @@ auto init = []
 {
     F[0] = 1;
     for (int i = 1; i < MX; i++)
+    {
         F[i] = F[i - 1] * i % MOD;
+    }
 
     INV_F[MX - 1] = pow(F[MX - 1], MOD - 2);
     for (int i = MX - 1; i; i--)
+    {
         INV_F[i - 1] = INV_F[i] * i % MOD;
+    }
 
     return 0;
 }();
@@ -57,7 +63,9 @@ public:
         {
             pow_v[i][0] = 1;
             for (int j = 1; j <= m; j++)
+            {
                 pow_v[i][j] = 1LL * pow_v[i][j - 1] * nums[i] % MOD;
+            }
         }
 
         vector f(n + 1, vector(m + 1, vector(m / 2 + 1, vector<int>(k + 1))));

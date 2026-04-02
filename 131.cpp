@@ -11,8 +11,12 @@ private:
     {
         int head = start, tail = end;
         while (head < tail)
+        {
             if (s[head++] != s[tail--])
+            {
                 return "";
+            }
+        }
         return s.substr(start, end - start + 1);
     }
 
@@ -43,7 +47,9 @@ public:
         {
             vector<string> palindromes = {check(s, 0, i - 1)};
             if (palindromes[0] != "")
+            {
                 dfs(s, palindromes, i, i);
+            }
         }
         return answer;
     }
@@ -56,8 +62,12 @@ int main(int argc, char const *argv[])
 
     vector<vector<string>> answer = solution.partition(s);
     for (auto &&ans : answer)
+    {
         for (int i = 0; i < ans.size(); i++)
+        {
             cout << ans[i] << (i < ans.size() - 1 ? ", " : "\n");
+        }
+    }
 
     return 0;
 }

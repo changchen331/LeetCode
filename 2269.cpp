@@ -14,7 +14,9 @@ public:
         {
             int temp = stoi(str_num.substr(i, k));
             if (temp > 0 && num % temp == 0)
+            {
                 answer++;
+            }
         }
 
         return answer;

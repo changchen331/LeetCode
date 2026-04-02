@@ -19,12 +19,18 @@ int init = []()
         {
             int e = 0;
             for (; t % i == 0; t /= i)
+            {
                 e++;
+            }
             if (e)
+            {
                 EXP[x].push_back(e);
+            }
         }
         if (t > 1)
+        {
             EXP[x].push_back(1);
+        }
     }
 
     // 预处理组合数
@@ -32,7 +38,9 @@ int init = []()
     {
         C[i][0] = 1;
         for (int j = 1; j <= min(i, MAX_E); j++)
+        {
             C[i][j] = (C[i - 1][j] + C[i - 1][j - 1]) % MOD;
+        }
     }
 
     return 0;
@@ -49,7 +57,9 @@ public:
         {
             long long response = 1;
             for (auto &&e : EXP[x])
+            {
                 response = response * C[n + e - 1][e] % MOD;
+            }
             answer += response;
         }
 

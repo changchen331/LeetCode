@@ -16,7 +16,9 @@ public:
 
         // 从 fruits[left][0] 到 startPos 的水果数
         for (; right < n && fruits[right][0] <= startPos; right++)
+        {
             s += fruits[right][1];
+        }
 
         int ans = s;
         // 枚举最右走到 fruits[right][0]
@@ -24,8 +26,10 @@ public:
         {
             s += fruits[right][1];
             while (fruits[right][0] * 2 - fruits[left][0] - startPos > k && fruits[right][0] - fruits[left][0] * 2 + startPos > k)
+            {
                 s -= fruits[left++][1]; // fruits[left][0] 太远了
-            ans = max(ans, s);          // 更新答案最大值
+            }
+            ans = max(ans, s); // 更新答案最大值
         }
         return ans;
     }

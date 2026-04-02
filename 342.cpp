@@ -7,7 +7,9 @@ unordered_set<int> POWER_OF_FOUR;
 int init = []
 {
     for (int i = 0; i <= 15; i++)
+    {
         POWER_OF_FOUR.insert(pow(4, i));
+    }
     return 0;
 }();
 
@@ -19,7 +21,9 @@ public:
         bool answer = false;
 
         if (POWER_OF_FOUR.find(n) != POWER_OF_FOUR.end())
+        {
             answer = true;
+        }
 
         return answer;
     }

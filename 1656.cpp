@@ -19,10 +19,16 @@ public:
         vector<string> response;
         strings[idKey - 1] = value;
         for (; current < strings.size(); current++)
+        {
             if (strings[current].size() > 0)
+            {
                 response.push_back(strings[current]);
+            }
             else
+            {
                 break;
+            }
+        }
         return response;
     }
 };
@@ -52,7 +58,9 @@ int main(int argc, char const *argv[])
             vector<string> strings = orderedStream->insert(values[i].first, values[i].second);
             cout << "[";
             for (int i = 0; i < strings.size(); i++)
+            {
                 cout << strings[i] << (i < strings.size() - 1 ? "," : "");
+            }
             cout << "] ";
         }
     }

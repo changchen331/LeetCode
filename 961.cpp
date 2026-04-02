@@ -10,8 +10,13 @@ public:
     {
         unordered_set<int> record;
         for (auto &&num : nums)
+        {
             if (!record.insert(num).second)
+            {
                 return num;
+            }
+        }
+
         return 0;
     }
 };

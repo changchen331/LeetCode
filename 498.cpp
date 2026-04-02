@@ -43,7 +43,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.findDiagonalOrder(mat);
     for (int i = 0; i < answer.size(); i++)
+    {
         cout << answer[i] << (i == answer.size() - 1 ? "\n" : " ");
+    }
 
     return 0;
 }

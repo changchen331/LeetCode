@@ -10,7 +10,9 @@ private:
     int bit_width(int num)
     {
         if (num == 0)
+        {
             return 0;
+        }
 
         int response = 0;
         while (num > 0)

@@ -27,23 +27,33 @@ public:
         for (int i = 0; i < 10 && start <= highLimit; i++)
         {
             if (start % 10 == 0)
+            {
                 break;
+            }
             else
+            {
                 start++;
+            }
             boxes[temp++]++;
         }
 
         if (start > highLimit)
+        {
             return *max_element(boxes.begin() + 1, boxes.end());
+        }
 
         temp = decompose(highLimit);
         int end = highLimit;
         for (int i = 0; i < 10 && end >= start; i++)
         {
             if (end % 10 == 9)
+            {
                 break;
+            }
             else
+            {
                 end--;
+            }
             boxes[temp--]++;
         }
 
@@ -51,7 +61,9 @@ public:
         {
             temp = decompose(start);
             for (int i = 0; i < 10; i++)
+            {
                 boxes[temp++]++;
+            }
             start += 10;
         }
 

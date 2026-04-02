@@ -26,15 +26,21 @@ public:
             }
         }
         if (target == 0)
+        {
             return -1;
+        }
 
         int temp = size;
         for (int i = 0; i < size; i++)
         {
             if (tops[i] == target)
+            {
                 temp -= (tops[i] == bottoms[i]);
+            }
             else
+            {
                 answer++;
+            }
         }
 
         return min(answer, temp - answer);

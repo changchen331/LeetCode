@@ -13,7 +13,9 @@ public:
 
         int total = 0;
         for (auto &&a : apple)
+        {
             total += a;
+        }
 
         int count = 0;
         for (auto &&c : capacity)
@@ -21,7 +23,9 @@ public:
             count += c;
             answer++;
             if (count >= total)
+            {
                 break;
+            }
         }
 
         return answer;

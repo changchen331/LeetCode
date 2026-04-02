@@ -26,7 +26,9 @@ public:
                 count = 0;
             }
             else
+            {
                 count++;
+            }
         }
 
         return answer;

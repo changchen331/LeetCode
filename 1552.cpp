@@ -10,12 +10,16 @@ private:
     {
         int last = position[0], count = 1;
         for (int i = 1; i < position.size(); i++)
+        {
             if (position[i] - last >= distance)
             {
                 last = position[i];
                 if (++count == m)
+                {
                     break;
+                }
             }
+        }
         return count == m;
     }
 
@@ -27,16 +31,22 @@ public:
         int left = 0;
         int right = (position.back() - position[0]) / (m - 1) + 1;
         if (m == 2)
+        {
             return right - 1;
+        }
 
         while (left + 1 < right)
         {
             int middle = left + (right - left) / 2;
 
             if (check(position, m, middle))
+            {
                 left = middle;
+            }
             else
+            {
                 right = middle;
+            }
         }
 
         return left;

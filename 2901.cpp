@@ -9,7 +9,9 @@ private:
     {
         int length = a.length();
         if (length != b.length())
+        {
             return false;
+        }
 
         bool response = false;
         for (int i = 0; i < length; i++)
@@ -17,7 +19,9 @@ private:
             if (a[i] != b[i])
             {
                 if (response)
+                {
                     return false;
+                }
                 response = true;
             }
         }
@@ -46,7 +50,9 @@ public:
 
             f[i]++;
             if (f[i] > f[max_i])
+            {
                 max_i = i;
+            }
         }
 
         int i = max_i, m = f[i];
@@ -68,7 +74,9 @@ int main(int argc, char const *argv[])
 
     vector<string> answer = solution.getWordsInLongestSubsequence(words, groups);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
 
     return 0;
 }

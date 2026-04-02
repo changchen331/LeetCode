@@ -15,23 +15,31 @@ private:
     {
         unordered_map<int, int> memories;
         for (int i = 0; i < subnums.size(); i++)
+        {
             memories[subnums[i]]++;
+        }
 
         if (memories.size() < top_x)
+        {
             return accumulate(subnums.begin(), subnums.end(), 0);
+        }
 
         vector<pair<int, int>> num_freq_pair(memories.begin(), memories.end());
         sort(num_freq_pair.begin(), num_freq_pair.end(),
              [](const auto &a, const auto &b)
              {
                  if (a.second != b.second)
+                 {
                      return a.second > b.second;
+                 }
                  return a.first > b.first;
              });
 
         int response = 0;
         for (int i = 0; i < top_x; i++)
+        {
             response += num_freq_pair[i].first * num_freq_pair[i].second;
+        }
         return response;
     }
 
@@ -63,7 +71,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.findXSum(nums, k, x);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

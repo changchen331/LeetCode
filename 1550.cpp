@@ -12,12 +12,18 @@ public:
         for (int i = 0, count = 0; i < size; i++)
         {
             if (arr[i] % 2)
+            {
                 count++;
+            }
             else
+            {
                 count = 0;
+            }
 
             if (count == 3)
+            {
                 return true;
+            }
         }
 
         return false;

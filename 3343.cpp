@@ -14,7 +14,9 @@ long long pow(long long x, int n)
     for (; n; n /= 2)
     {
         if (n % 2)
+        {
             res = res * x % MOD;
+        }
         x = x * x % MOD;
     }
     return res;
@@ -24,11 +26,15 @@ auto init = []
 {
     F[0] = 1;
     for (int i = 1; i < MX; i++)
+    {
         F[i] = F[i - 1] * i % MOD;
+    }
 
     INV_F[MX - 1] = pow(F[MX - 1], MOD - 2);
     for (int i = MX - 1; i; i--)
+    {
         INV_F[i - 1] = INV_F[i] * i % MOD;
+    }
 
     return 0;
 }();
@@ -46,11 +52,15 @@ public:
             total += c - '0';
         }
         if (total % 2)
+        {
             return 0;
+        }
 
         // 原地求前缀和
         for (int i = 1; i < 10; i++)
+        {
             cnt[i] += cnt[i - 1];
+        }
 
         int n = num.size(), n1 = n / 2;
         vector<vector<vector<int>>> memo(10, vector(n1 + 1, vector<int>(total / 2 + 1, -1))); // -1 表示没有计算过
@@ -58,11 +68,15 @@ public:
         auto dfs = [&](auto &dfs, int i, int left1, int left_s) -> int
         {
             if (i < 0)
+            {
                 return left_s == 0;
+            }
 
             int &res = memo[i][left1][left_s]; // 注意这里是引用
             if (res != -1)
+            {
                 return res; // 之前计算过
+            }
 
             res = 0;
             int c = cnt[i] - (i ? cnt[i - 1] : 0);

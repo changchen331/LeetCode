@@ -10,7 +10,9 @@ public:
         int answer = 0, size = nums.size();
 
         for (int i = 0; i < size - 2; i++)
+        {
             answer += (nums[i] + nums[i + 2]) == ((float)nums[i + 1] / 2);
+        }
 
         return answer;
     }

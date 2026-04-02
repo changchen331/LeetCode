@@ -14,26 +14,34 @@ public:
         // for (int i = 1; i <= m; i++)
         // {
         //     for (int j = 0; j < n; j++)
+        //     {
         //         counts1[i][j] = (matrix[i - 1][j] == 0) ? 0 : counts1[i - 1][j] + 1;
+        //     }
 
         //     vector<int> temp = counts1[i];
         //     sort(temp.begin(), temp.end(), greater<>());
 
         //     for (int j = 0; j < n; j++)
+        //     {
         //         answer = max(answer, (j + 1) * temp[j]);
+        //     }
         // }
 
         vector<int> counts1(n, 0);
         for (int i = 0; i < m; i++)
         {
             for (int j = 0; j < n; j++)
+            {
                 counts1[j] = (matrix[i][j] == 0) ? 0 : counts1[j] + 1;
+            }
 
             vector<int> temp = counts1;
             sort(temp.begin(), temp.end(), greater<>());
 
             for (int j = 0; j < n; j++)
+            {
                 answer = max(answer, (j + 1) * temp[j]);
+            }
         }
 
         return answer;

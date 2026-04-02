@@ -10,7 +10,9 @@ int init = []
     {
         vector<int> temp = {1};
         for (int j = 1; j < i; j++)
+        {
             temp.push_back(answers[i - 1][j - 1] + answers[i - 1][j]);
+        }
         temp.push_back(1);
         answers.push_back(temp);
     }
@@ -26,7 +28,9 @@ public:
         vector<vector<int>> answer;
 
         for (int i = 0; i < numRows; i++)
+        {
             answer.push_back(answers[i]);
+        }
 
         return answer;
     }
@@ -41,7 +45,9 @@ int main(int argc, char const *argv[])
     for (auto &&ans : answer)
     {
         for (auto &&a : ans)
+        {
             cout << a << " ";
+        }
         cout << endl;
     }
 

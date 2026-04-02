@@ -14,7 +14,9 @@ public:
         // for (int i = 0; i < size; i++)
         // {
         //     if (words[i] == "EAGLE")
+        //     {
         //         continue;
+        //     }
 
         //     bool flag = false;
         //     for (int j = i + 1; j < size; j++)
@@ -38,7 +40,9 @@ public:
         // 方法二
         vector<vector<int>> count(26, vector<int>(26, 0));
         for (auto &&word : words)
+        {
             count[word[0] - 'a'][word[1] - 'a']++;
+        }
 
         int odd = 0;
         for (int i = 0; i < 26; i++)
@@ -48,7 +52,9 @@ public:
             odd |= c % 2;
 
             for (int j = i + 1; j < 26; j++)
+            {
                 answer += min(count[i][j], count[j][i]) * 2;
+            }
         }
 
         return (answer + odd) * 2;

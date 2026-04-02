@@ -30,9 +30,13 @@ public:
         {
             int mid = left + (right - left) / 2;
             if (balanced_nums[mid] <= n)
+            {
                 left = mid + 1;
+            }
             else
+            {
                 right = mid;
+            }
         }
         answer = balanced_nums[right];
 

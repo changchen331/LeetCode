@@ -14,7 +14,9 @@ public:
         {
             int bit = bits[i];
             if (bit)
+            {
                 i++;
+            }
         }
 
         return (i == size - 1) && (bits[i] == 0);

@@ -15,7 +15,9 @@ public:
         for (auto &&battery : batteries)
         {
             if (battery <= sum / n)
+            {
                 return sum / n;
+            }
             sum -= battery;
             n--;
         }

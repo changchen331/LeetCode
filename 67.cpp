@@ -10,9 +10,13 @@ public:
         string answer = "";
 
         while (a.length() < b.length())
+        {
             a.insert(a.begin(), '0');
+        }
         while (a.length() > b.length())
+        {
             b.insert(b.begin(), '0');
+        }
 
         int length = max(a.length(), b.length());
         bool flag = false;
@@ -27,20 +31,30 @@ public:
             else if (add == 1)
             {
                 if (flag)
+                {
                     answer.push_back('1' - (flag = true));
+                }
                 else
+                {
                     answer.push_back('1');
+                }
             }
             else
             {
                 if (flag)
+                {
                     answer.push_back('1' + (flag = false));
+                }
                 else
+                {
                     answer.push_back('0');
+                }
             }
         }
         if (flag)
+        {
             answer.push_back('1');
+        }
 
         reverse(answer.begin(), answer.end());
         return answer;

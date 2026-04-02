@@ -9,7 +9,9 @@ public:
     {
         int length = s.length();
         if (length % 2)
+        {
             return false;
+        }
 
         vector<int> left_positions, unlocked_positions;
         for (int i = 0; i < length; i++)
@@ -21,27 +23,39 @@ public:
             }
 
             if (s[i] == '(')
+            {
                 left_positions.push_back(i);
+            }
             else
             {
                 if (left_positions.empty())
                 {
                     if (unlocked_positions.empty())
+                    {
                         return false;
+                    }
                     else
+                    {
                         unlocked_positions.pop_back();
+                    }
                 }
                 else
+                {
                     left_positions.pop_back();
+                }
             }
         }
 
         while (!left_positions.empty())
         {
             if (unlocked_positions.empty())
+            {
                 return false;
+            }
             if (left_positions.back() > unlocked_positions.back())
+            {
                 return false;
+            }
             else
             {
                 left_positions.pop_back();

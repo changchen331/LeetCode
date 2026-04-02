@@ -11,8 +11,12 @@ public:
         int size = nums.size();
 
         for (int i = 0; i < size; i++)
+        {
             if (nums[i] == key)
+            {
                 key_positions.push_back(i);
+            }
+        }
         int key_size = key_positions.size();
 
         for (int i = 0; i < size; i++)
@@ -42,7 +46,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.findKDistantIndices(nums, key, k);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

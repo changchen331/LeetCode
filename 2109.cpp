@@ -12,7 +12,9 @@ public:
 
         // 方法一
         // for (int i = 0, count = 0; i < size; i++, count++)
+        // {
         //     s.insert(spaces[i] + count, " ");
+        // }
         // return s;
 
         // 方法二

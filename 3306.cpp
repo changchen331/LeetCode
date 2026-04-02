@@ -17,9 +17,13 @@ private:
         {
             char character = word[right];
             if (aeiou.find(character) != string::npos)
+            {
                 memories[character]++;
+            }
             else
+            {
                 count++;
+            }
 
             while (memories.size() == 5 && count >= least)
             {
@@ -27,7 +31,9 @@ private:
                 if (aeiou.find(temp) != string::npos)
                 {
                     if (--memories[temp] == 0)
+                    {
                         memories.erase(temp);
+                    }
                 }
                 else
                     count--;
@@ -49,6 +55,9 @@ int main(int argc, char const *argv[])
     Solution solution;
     string word = "ieaouqqieaouqq";
     int k = 1;
+
+    long long answer = solution.countOfSubstrings(word, k);
+    cout << answer << endl;
 
     return 0;
 }

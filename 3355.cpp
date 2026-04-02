@@ -21,7 +21,9 @@ public:
         {
             count += diff[i];
             if (nums[i] + count > 0)
+            {
                 return false;
+            }
         }
 
         return true;

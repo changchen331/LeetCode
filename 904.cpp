@@ -9,7 +9,9 @@ public:
     {
         int answer = 0, size = fruits.size();
         if (size == 1 || size == 2)
+        {
             return size;
+        }
 
         for (int head = 1; head <= size - answer; head++)
         {
@@ -19,12 +21,18 @@ public:
             {
                 int current = fruits[tail];
                 if (b == -1 && a != current)
+                {
                     b = current;
+                }
 
                 if (current == a || current == b)
+                {
                     count++;
+                }
                 else
+                {
                     break;
+                }
             }
             answer = max(answer, count);
         }

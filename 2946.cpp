@@ -17,13 +17,17 @@ public:
                 {
                     int later = mat[i][(j + k) % n];
                     if (current != later)
+                    {
                         return false;
+                    }
                 }
                 else
                 {
                     int later = mat[i][(j - (k % n) + n) % n];
                     if (current != later)
+                    {
                         return false;
+                    }
                 }
             }
         }

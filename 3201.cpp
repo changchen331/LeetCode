@@ -27,7 +27,9 @@ public:
     {
         int answer = 0, size = nums.size();
         if (size < 3)
+        {
             return size;
+        }
 
         vector<int> same(size - 1, -1), diff(size - 1, -1);
 
@@ -37,7 +39,9 @@ public:
 
         int count_odd = 0, count_eve = 0;
         for (auto &&num : nums)
+        {
             count_odd += num % 2;
+        }
         count_eve = size - count_odd;
 
         answer = max(answer, max(count_eve, count_odd));

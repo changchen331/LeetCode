@@ -22,24 +22,34 @@ public:
         // {
         //     int num = nums[i];
         //     if (maximums[i - 1] < num && num < minimums[i + 1])
+        //     {
         //         answer += 2;
+        //     }
         //     else if (nums[i - 1] < num && num < nums[i + 1])
+        //     {
         //         answer += 1;
+        //     }
         // }
 
         // 方法一（改进版）
         minimums[size - 1] = nums[size - 1];
         for (int i = size - 2; i >= 0; i--)
+        {
             minimums[i] = min(minimums[i + 1], nums[i]);
+        }
 
         int maximum = nums[0];
         for (int i = 1; i < size - 1; i++)
         {
             int num = nums[i];
             if (maximum < num && num < minimums[i + 1])
+            {
                 answer += 2;
+            }
             else if (nums[i - 1] < num && num < nums[i + 1])
+            {
                 answer += 1;
+            }
             maximum = max(maximum, num);
         }
 

@@ -21,7 +21,9 @@ private:
         {
             sum += decrements[i];
             if (nums[i] > sum)
+            {
                 return false;
+            }
         }
         return true;
     }
@@ -43,7 +45,9 @@ public:
         //     }
         // }
         // if (flag)
+        // {
         //     return 0;
+        // }
 
         // for (int round = 0, record = 0; round < time; round++)
         // {
@@ -54,12 +58,18 @@ public:
         //     {
         //         count += decrements[i];
         //         if (nums[i] + count <= 0)
+        //         {
         //             record = i + 1;
+        //         }
         //         else
+        //         {
         //             break;
+        //         }
 
         //         if (record == size)
+        //         {
         //             return round + 1;
+        //         }
         //     }
         // }
 

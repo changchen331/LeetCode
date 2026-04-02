@@ -17,9 +17,13 @@ public:
             for (int j = 0; j < length2; j++)
             {
                 if (s1[i] == s2[j])
+                {
                     memories[i + 1][j + 1] = memories[i][j] + s2[j];
+                }
                 else
+                {
                     memories[i + 1][j + 1] = max(memories[i + 1][j], memories[i][j + 1]);
+                }
             }
         }
 

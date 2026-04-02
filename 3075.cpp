@@ -16,7 +16,9 @@ public:
         {
             int current = happiness[i] - i;
             if (current <= 0)
+            {
                 break;
+            }
             answer += current;
         }
 

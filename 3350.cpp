@@ -14,7 +14,9 @@ public:
         for (; position < size; position++)
         {
             if (nums[position - 1] < nums[position])
+            {
                 count++;
+            }
             else
             {
                 answer = max(answer, max(count / 2, min(last, count)));

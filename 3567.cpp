@@ -18,8 +18,12 @@ public:
             {
                 vector<int> temp;
                 for (int x = 0; x < k; x++)
+                {
                     for (int y = 0; y < k; y++)
+                    {
                         temp.push_back(grid[i + x][j + y]);
+                    }
+                }
 
                 sort(temp.begin(), temp.end());
                 if (temp.front() == temp.back())
@@ -33,7 +37,9 @@ public:
                 {
                     int diff = temp[z] - temp[z - 1];
                     if (diff == 0)
+                    {
                         continue;
+                    }
                     minimum = min(minimum, abs(diff));
                 }
                 answer[i][j] = minimum;
@@ -54,7 +60,9 @@ int main(int argc, char const *argv[])
     for (auto &&ans : answer)
     {
         for (auto &&a : ans)
+        {
             cout << a << " ";
+        }
         cout << endl;
     }
 

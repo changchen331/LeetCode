@@ -10,21 +10,33 @@ public:
 
         int left = 0, right = length - 1;
         for (; left < length; left++)
+        {
             if (directions[left] != 'L')
+            {
                 break;
+            }
+        }
         for (; right > -1; right--)
+        {
             if (directions[right] != 'R')
+            {
                 break;
+            }
+        }
 
         // 模拟
         // for (; left <= right; left++)
         // {
         //     char &current = directions[left];
         //     if (current == 'S')
+        //     {
         //         continue;
+        //     }
 
         //     if (current == 'L')
+        //     {
         //         answer++;
+        //     }
         //     else if (current == 'R')
         //     {
         //         for (int i = left + 1; i < length; i++)
@@ -47,7 +59,9 @@ public:
 
         // 计算
         for (; left <= right; left++)
+        {
             answer += (directions[left] != 'S');
+        }
 
         return answer;
     }

@@ -15,7 +15,9 @@ private:
     int countr_zero(int x)
     {
         if (x == 0)
+        {
             return 32;
+        }
         int count = 0;
         while ((x & 1) == 0)
         {
@@ -29,10 +31,14 @@ public:
     vector<int> earliestAndLatest(int n, int firstPlayer, int secondPlayer)
     {
         if (firstPlayer + secondPlayer == n + 1)
+        {
             return {1, 1};
+        }
 
         if (firstPlayer + secondPlayer > n + 1)
+        {
             tie(firstPlayer, secondPlayer) = pair(n + 1 - secondPlayer, n + 1 - firstPlayer);
+        }
 
         auto calc_earliest_rounds = [&](int n) -> int
         {
@@ -46,7 +52,9 @@ public:
                 res += k;
 
                 if (secondPlayer - firstPlayer > 1)
+                {
                     return res + 1;
+                }
             }
 
             // 情况 1 和情况 3 合并，情况 2 合并到最后的 return
@@ -58,7 +66,9 @@ public:
             }
 
             if (secondPlayer > (n + 1) / 2 && firstPlayer % 2 == 0 && firstPlayer + secondPlayer == n)
+            {
                 res++;
+            }
 
             return res + 1;
         };

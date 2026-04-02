@@ -16,7 +16,9 @@ public:
         vector<int> factorial(n + 1);
         factorial[0] = 1;
         for (int i = 1; i <= n; i++)
+        {
             factorial[i] = factorial[i - 1] * i;
+        }
 
         unordered_set<string> memories;
         int base = pow(10, (n - 1) / 2);
@@ -25,19 +27,27 @@ public:
             string s = to_string(i);
             s += string(s.rbegin() + (n % 2), s.rend());
             if (stoll(s) % k)
+            {
                 continue;
+            }
 
             sort(s.begin(), s.end());
             if (!memories.insert(s).second)
+            {
                 continue;
+            }
 
             // 算排列组合
             vector<int> count(10, 0);
             for (auto &&c : s)
+            {
                 count[c - '0']++;
+            }
             int response = (n - count[0]) * factorial[n - 1];
             for (auto &&cou : count)
+            {
                 response /= factorial[cou];
+            }
             answer += response;
         }
 

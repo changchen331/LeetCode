@@ -11,20 +11,29 @@ private:
     bool check(string &s, int start, int end)
     {
         while (start < end)
+        {
             if (s[start++] != s[end--])
+            {
                 return false;
+            }
+        }
+
         return true;
     }
 
     void dfs(string &s, int position, int count)
     {
         if (position == length)
+        {
             return;
+        }
 
         for (int i = length - 1; i >= position; i--)
         {
             if (memory[i] <= count + 1)
+            {
                 continue;
+            }
             if (check(s, position, i))
             {
                 memory[i] = count + 1;

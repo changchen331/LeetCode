@@ -23,7 +23,9 @@ public:
             sum += diff[i];
 
             while (j < time && queries[j][0] <= i)
+            {
                 pq.push(queries[j++][1]);
+            }
 
             while (sum < nums[i] && !pq.empty() && pq.top() >= i)
             {
@@ -32,7 +34,9 @@ public:
                 pq.pop();
             }
             if (sum < nums[i])
+            {
                 return -1;
+            }
         }
 
         return pq.size();

@@ -15,7 +15,9 @@ public:
         for (int i = 0; n > 0; i++)
         {
             if (n & 1)
+            {
                 binaries.push_back(1 << i);
+            }
             n /= 2;
         }
 
@@ -42,7 +44,9 @@ int main(int argc, char const *argv[])
 
     vector<int> answer = solution.productQueries(n, queries);
     for (auto &&ans : answer)
+    {
         cout << ans << " ";
+    }
     cout << endl;
 
     return 0;

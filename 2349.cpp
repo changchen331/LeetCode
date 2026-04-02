@@ -19,7 +19,9 @@ public:
         // 移除旧数据
         auto it = index_to_num.find(index);
         if (it != index_to_num.end())
+        {
             num_to_index[it->second].erase(index);
+        }
 
         // 添加新数据
         index_to_num[index] = number;
@@ -51,11 +53,17 @@ int main(int argc, char const *argv[])
         string command = commands[i];
 
         if (command == "NumberContainers")
+        {
             obj = new NumberContainers();
+        }
         else if (command == "change")
+        {
             obj->change(values[i][0], values[i][1]);
+        }
         else
+        {
             cout << obj->find(values[i][0]) << (i < commands.size() - 1 ? " " : "\n");
+        }
     }
 
     return 0;

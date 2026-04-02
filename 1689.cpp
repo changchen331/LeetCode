@@ -9,7 +9,9 @@ public:
         int answer = 0, length = n.length();
 
         for (int i = 0; i < length; i++)
+        {
             answer = max(answer, n[i] - '0');
+        }
 
         return answer;
     }

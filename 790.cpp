@@ -10,14 +10,18 @@ public:
     int numTilings(int n)
     {
         if (n == 1)
+        {
             return 1;
+        }
 
         vector<long long> memories(n + 1);
 
         memories[0] = memories[1] = 1;
         memories[2] = 2;
         for (int i = 3; i <= n; i++)
+        {
             memories[i] = (2 * memories[i - 1] + memories[i - 3]) % MOD;
+        }
 
         return memories[n];
     }
