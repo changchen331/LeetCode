@@ -41,7 +41,8 @@ struct TreeNode
 int main(int argc, char const *argv[])
 {
     // 二进制字符串转 int
-    string s = "11111";
+    int num = 11111;
+    string s = to_string(num);
     cout << stoi(s, nullptr, 2) << endl;
 
     // 自定义排序规则
@@ -69,6 +70,96 @@ int main(int argc, char const *argv[])
             nodes.push(node->right = new TreeNode(root[position++]));
         }
     }
+
+    // 二分
+    vector<int> nums = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+    int left, right, middle, target = 3;
+    middle = lower_bound(nums.begin(), nums.end(), target) - nums.begin();
+    cout << "lower_bound: nums[" << middle << "] = " << nums[middle] << endl;
+    // 左闭右闭
+    left = 0, right = nums.size() - 1;
+    while (left <= right)
+    {
+        middle = left + (right - left) / 2;
+        if (nums[middle] < target)
+        {
+            left = middle + 1;
+        }
+        else if (nums[middle] > target)
+        {
+            right = middle - 1;
+        }
+        else
+        {
+            break;
+        }
+    }
+    cout << "\n左闭右闭 Left: nums[" << left << "] = " << nums[left] << endl;
+    cout << "左闭右闭 Middle: nums[" << middle << "] = " << nums[middle] << endl;
+    cout << "左闭右闭 Right: nums[" << right << "] = " << nums[right] << endl;
+    // 左闭右开
+    left = 0, right = nums.size();
+    while (left < right)
+    {
+        middle = left + (right - left) / 2;
+        if (nums[middle] < target)
+        {
+            left = middle + 1;
+        }
+        else if (nums[middle] > target)
+        {
+            right = middle;
+        }
+        else
+        {
+            break;
+        }
+    }
+    cout << "\n左闭右开 Left: nums[" << left << "] = " << nums[left] << endl;
+    cout << "左闭右开 Middle: nums[" << middle << "] = " << nums[middle] << endl;
+    cout << "左闭右开 Right: nums[" << right << "] = " << nums[right] << endl;
+    // 左开右闭（答案错误）
+    // left = -1, right = nums.size() - 1;
+    // while (left < right)
+    // {
+    //     middle = left + (right - left) / 2;
+    //     if (nums[middle] < target)
+    //     {
+    //         left = middle;
+    //     }
+    //     else if (nums[middle] > target)
+    //     {
+    //         right = middle - 1;
+    //     }
+    //     else
+    //     {
+    //         break;
+    //     }
+    // }
+    // cout << "\n左开右闭 Left: nums[" << left << "] = " << nums[left] << endl;
+    // cout << "左开右闭 Middle: nums[" << middle << "] = " << nums[middle] << endl;
+    // cout << "左开右闭 Right: nums[" << right << "] = " << nums[right] << endl;
+    // 左开右开
+    left = -1, right = nums.size();
+    while (left + 1 < right)
+    {
+        middle = left + (right - left) / 2;
+        if (nums[middle] < target)
+        {
+            left = middle;
+        }
+        else if (nums[middle] > target)
+        {
+            right = middle;
+        }
+        else
+        {
+            break;
+        }
+    }
+    cout << "\n左开右开 Left: nums[" << left << "] = " << nums[left] << endl;
+    cout << "左开右开 Middle: nums[" << middle << "] = " << nums[middle] << endl;
+    cout << "左开右开 Right: nums[" << right << "] = " << nums[right] << endl;
 
     return 0;
 }
