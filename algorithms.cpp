@@ -143,7 +143,7 @@ int main(int argc, char const *argv[])
     // 二分搜索
     vector<int> binary_nums = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
     int target = 13;
-    // binarySearch(binary_nums, target);
+    binarySearch(binary_nums, target);
 
     // 冒泡排序
     vector<int> bubble_nums = {5, 4, 3, 2, 1, 0};
