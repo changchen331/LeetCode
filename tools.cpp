@@ -5,7 +5,6 @@
 using namespace std;
 
 vector<int> POWER_OF_TWO;
-
 int init = []
 {
     for (int i = 0; i < 31; i++)
