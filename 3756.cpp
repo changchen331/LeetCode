@@ -1,4 +1,3 @@
-#include <cmath>
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -47,7 +46,7 @@ public:
             long long sum = pre_sum[y + 1] - pre_sum[x];
 
             long long diff = power_ten[pre_cnt[y + 1] - pre_cnt[x]];
-            long long pre = pre_dig[x] * diff;
+            long long pre = pre_dig[x] * diff % M;
             long long dig = ((pre_dig[y + 1] - pre) % M + M) % M;
 
             answer[i] = (sum * dig) % M;
