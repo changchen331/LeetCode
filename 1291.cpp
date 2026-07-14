@@ -26,7 +26,6 @@ public:
     vector<int> sequentialDigits(int low, int high)
     {
         vector<int> answer;
-        int start = 0, end = 35;
         for (int i = 0; i < sequential_digits.size(); i++)
         {
             int cur = sequential_digits[i];
