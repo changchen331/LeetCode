@@ -20,23 +20,40 @@ public:
             mem[p]++;
         }
 
+        // 写法一
+        // for (int i = 0; i < count; i++)
+        // {
+        //     int mp = 0;
+        //     for (int j = 1; j < 26; j++)
+        //     {
+        //         if (mem[j] == 0)
+        //         {
+        //             continue;
+        //         }
+
+        //         if (mem[mp] < mem[j])
+        //         {
+        //             mp = j;
+        //         }
+        //     }
+        //     answer += (i / 8 + 1) * mem[mp];
+        //     mem[mp] = 0;
+        // }
+
+        // 写法二
+        vector<int> freq;
+        for (auto &&m : mem)
+        {
+            if (m == 0)
+            {
+                continue;
+            }
+            freq.push_back(m);
+        }
+        sort(freq.begin(), freq.end(), greater<int>());
         for (int i = 0; i < count; i++)
         {
-            int mp = 0;
-            for (int j = 1; j < 26; j++)
-            {
-                if (mem[j] == 0)
-                {
-                    continue;
-                }
-
-                if (mem[mp] < mem[j])
-                {
-                    mp = j;
-                }
-            }
-            answer += (i / 8 + 1) * mem[mp];
-            mem[mp] = 0;
+            answer += (i / 8 + 1) * freq[i];
         }
 
         return answer;
