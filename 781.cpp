@@ -8,23 +8,24 @@ class Solution
 public:
     int numRabbits(vector<int> &answers)
     {
+        int size = answers.size();
         sort(answers.begin(), answers.end());
 
-        int answer = answers[0] + 1, size = answers.size(), skip = answers[0];
+        int answer = answers[0] + 1;
+        int skip = answers[0];
         for (int i = 1; i < size; i++)
         {
             int &ans = answers[i];
-
             if (ans != answers[i - 1])
             {
                 skip = 0;
             }
+
             if (skip > 0)
             {
                 skip--;
                 continue;
             }
-
             answer += ans + 1;
             skip = ans;
         }
