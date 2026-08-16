@@ -51,6 +51,37 @@ private:
         return memories[x][y];
     }
 
+    // 解法三
+    int m, n;
+    vector<vector<int>> mem;
+    vector<vector<int>> ObstacleGrid;
+    int dfs(int x, int y)
+    {
+        if (x + 1 == m && y + 1 == n)
+        {
+            return 1;
+        }
+
+        int &resp = mem[x][y];
+        if (resp != -1)
+        {
+            return resp;
+        }
+
+        int righ = 0, down = 0;
+        if (x + 1 < m && ObstacleGrid[x + 1][y] == 0)
+        {
+            down = dfs(x + 1, y);
+        }
+        if (y + 1 < n && ObstacleGrid[x][y + 1] == 0)
+        {
+            righ = dfs(x, y + 1);
+        }
+        resp = righ + down;
+
+        return resp;
+    }
+
 public:
     int uniquePathsWithObstacles(vector<vector<int>> &obstacleGrid)
     {
@@ -66,11 +97,20 @@ public:
         // return answer;
 
         // 官解
-        for (int i = 0; i < row_size; i++)
-        {
-            memories.push_back(vector<int>(col_size, -1));
-        }
-        return DFS(row_size - 1, col_size - 1, obstacleGrid);
+        // for (int i = 0; i < row_size; i++)
+        // {
+        //     memories.push_back(vector<int>(col_size, -1));
+        // }
+        // return DFS(row_size - 1, col_size - 1, obstacleGrid);
+
+        // 解法三
+        m = obstacleGrid.size();
+        n = obstacleGrid[0].size();
+        ObstacleGrid = obstacleGrid;
+        mem.resize(m, vector<int>(n, -1));
+
+        int answer = dfs(0, 0);
+        return answer;
     }
 };
 
