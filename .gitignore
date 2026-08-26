@@ -1,5 +1,7 @@
 /.vscode
 /.codebuddy
+/test
+
 *.md
 
 # Prerequisites
