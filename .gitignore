@@ -1,5 +1,7 @@
 /.vscode
 /.codebuddy
+/.workbuddy
+/.claude
 /test
 
 *.md
