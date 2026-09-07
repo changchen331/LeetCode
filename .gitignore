@@ -5,6 +5,8 @@
 /test
 
 *.md
+!WORKBUDDY.md
+!README.md
 
 # Prerequisites
 *.d
