@@ -1,0 +1,5 @@
+# 行尾规范化：所有 Markdown 文件在仓库内一律存为 LF
+# 目的：消除 Windows(CRLF) 与 Linux/macOS(LF) 混用导致的 ghost diff
+# 说明：eol=lf 表示检入(check-in)与检出(check-out)都使用 LF；
+#       本地编辑器（VS Code 等）对 LF 的 .md 完全兼容。
+*.md text eol=lf
