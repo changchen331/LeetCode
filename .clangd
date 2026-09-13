@@ -1,0 +1,9 @@
+# clangd 配置（clangd 不读取 .vscode/c_cpp_properties.json，需单独配置）
+CompileFlags:
+  # 指定编译器驱动：clangd 据此自动推导 MinGW 工具链的头文件搜索路径
+  Compiler: D:/MinGW/14.2.0/bin/g++.exe
+  Add:
+    # clang 在 Windows 上默认目标是 MSVC，必须改成 MinGW 目标，
+    # 否则 __x86_64__ / __LP64__ / __MINGW64__ 不会定义，解析 MinGW 头文件会报错
+    - --target=x86_64-w64-windows-gnu
+    - -std=gnu++17
