@@ -11,7 +11,7 @@
 ├── algorithms.cpp / tools.cpp      # 学习笔记与个人小工具
 ├── digital_dp_template_*.cpp       # 模板笔记
 ├── test/                           # 临时实验目录
-├── WORKBUDDY.md                    # AI 行为契约（详见）
+├── AGENTS.md                       # AI 行为契约（详见）
 └── README.md                       # 本文件
 ```
 
@@ -29,7 +29,7 @@ g++ -std=c++17 -O2 42.cpp -o 42.exe
 
 ## 代码模板
 
-每道题统一遵循下述模板，详见 [`WORKBUDDY.md`](./WORKBUDDY.md)：
+每道题统一遵循下述模板，详见 [`AGENTS.md`](./AGENTS.md)：
 
 ```cpp
 #include <vector>
@@ -50,7 +50,7 @@ int main(int argc, char const *argv[]) {
 
 ## AI 协作
 
-本仓库使用 AI 助手按"算法老师"角色协作——**引导思考而非直接给答案**。完整行为契约、禁止/鼓励条款、AC 后审阅流程见 [`WORKBUDDY.md`](./WORKBUDDY.md)。
+本仓库使用 AI 助手按"算法老师"角色协作——**引导思考而非直接给答案**。完整行为契约、禁止/鼓励条款、AC 后审阅流程见 [`AGENTS.md`](./AGENTS.md)。
 
 agent 私有产物（AI 长期记忆、每日日志、AC 审阅 skill 等）位于 `.workbuddy/` 目录，**不在版本控制内**，仅本地存在。
 

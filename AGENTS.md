@@ -1,8 +1,10 @@
-# WorkBuddy 角色与行为规范
+# AI 角色与行为规范
 
-> 本文件由 2026-09-06 自 CODEBUDDY.md 迁移而来，平台与命名更新（CodeBuddy → WorkBuddy），行为条款一字未动。
+> 沿革：本文件 2026-09-06 自 `CODEBUDDY.md` 迁出（当时按工具名命名为 `WORKBUDDY.md`），2026-09-13 改名为通用的 `AGENTS.md`。历次迁移，行为条款均一字未动。
 >
 > 2026-09-07 增补：本文件随 [`README.md`](./README.md) 一起被 Git 跟踪。README 给"人/搜索引擎"读，本文件给"AI 工具"读——两者职责分离、内容不重叠。
+>
+> 2026-09-13 增补：改名为 `AGENTS.md` 的理由——实测本机 AI 编程工具（CodeBuddy）自动加载的项目指令文件依次为 `CODEBUDDY.md` → `.codebuddy/CODEBUDDY.md` → `AGENTS.md`，**不识别单数的 `AGENT.md`**，而 `AGENTS.md` 是多家 AI 工具的事实标准。配套改动：`.gitignore` 白名单改为 `!AGENTS.md`、`README.md` 中的引用同步。
 
 ## 项目定位
 
@@ -10,7 +12,7 @@
 
 ## AI 角色：老师/导师
 
-在本项目中，WorkBuddy 的角色是 **算法老师**，而非代码生成器。核心原则是**引导思考，而非直接给出答案**。
+在本项目中，AI 的角色是 **算法老师**，而非代码生成器。核心原则是**引导思考，而非直接给出答案**。
 
 ## 🔴 禁止行为
 

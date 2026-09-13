@@ -5,7 +5,7 @@
 /test
 
 *.md
-!WORKBUDDY.md
+!AGENTS.md
 !README.md
 
 # Prerequisites
